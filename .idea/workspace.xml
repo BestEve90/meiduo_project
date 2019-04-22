@@ -1,128 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69234a9e-bd2f-4f54-83cc-21637bbdb7dc" name="Default" comment="创建用户应用">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/QQ-weixin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/adv01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/adv02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/banner01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/banner02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/banner03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/bar_code.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/cat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/clock.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/clock.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/find-password.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods001.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods002.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods003.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods004.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods005.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods006.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods007.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods008.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods/goods009.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/goods_450.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/icons02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/interval_line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/left_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/login_banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/logo02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/missing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/pay_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/pic_code.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/register_banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/shine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/shop_cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/slide01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/slide02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/slide03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/slide04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/stars.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/success.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/images/time_count_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/f884c3b3-ebd2-4f13-af9d-d31551cbf54e.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/f884c3b3-ebd2-4f13-af9d-d31551cbf54e/storage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/meiduo_mall.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/cart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/css/jquery.pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/css/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/10.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/11.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/12.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/13.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/14.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/15.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/16.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/5.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/6.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/7.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/8.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/axios-0.18.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/cart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/detail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/goods_judge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/host.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/jquery-1.12.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/jquery.pagination.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/list.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/oauth_callback.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/order_success.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/place_order.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/register.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/slide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/user_center_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/user_center_order.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/user_center_pass.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/user_center_site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/vue-2.5.16.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/oauth_callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/pay_success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_pass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_site.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/templates/register.html" />
+    <list default="true" id="69234a9e-bd2f-4f54-83cc-21637bbdb7dc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/meiduo_mall.iml" afterPath="$PROJECT_DIR$/.idea/meiduo_mall.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" afterPath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/404.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/cart.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/1.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/10.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/11.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/12.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/13.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/13.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/14.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/14.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/15.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/15.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/16.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/16.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/2.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/3.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/4.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/5.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/6.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/7.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/8.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/index.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/list.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/login.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_info.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_pass.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_pass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_site.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_site.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/register.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/urls.py" afterPath="$PROJECT_DIR$/meiduo_mall/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -151,34 +68,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="meiduo_mall@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="tb_users_user_permissions" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="meiduo_mall@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="tb_users" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -186,15 +75,61 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dev.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dev.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/settings/dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-537">
-              <caret line="115" column="15" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="15" />
+            <state relative-caret-position="1126">
+              <caret line="128" column="10" lean-forward="true" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
               <folding>
                 <element signature="e#1172#1571#0" expanded="false" />
                 <element signature="e#1620#2193#0" expanded="false" />
-                <element signature="e#2732#3128#0" expanded="false" />
+                <element signature="e#2729#3125#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding>
+                <element signature="e#645#685#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/apps.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
+              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -239,6 +174,10 @@
         <option value="$PROJECT_DIR$/meiduo_mall/__init__.py" />
         <option value="$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.5/site-packages/django/conf/global_settings.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/models.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/urls.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/urls.py" />
       </list>
     </option>
   </component>
@@ -313,6 +252,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -702,14 +659,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555936416726</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="创建用户应用">
+      <created>1555938218221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555938218222</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1851253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22958772" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289256" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983023" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -717,7 +681,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38153845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289256" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76363635" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -772,7 +736,7 @@
         <state relative-caret-position="264">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,7 +794,7 @@
         <state relative-caret-position="107">
           <caret line="321" column="20" lean-forward="true" selection-start-line="321" selection-start-column="20" selection-end-line="321" selection-end-column="20" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -851,30 +815,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/urls.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="72">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/apps.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/505442f6-0215-4d15-bf29-c9c72123f873/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/settings/dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-537">
-          <caret line="115" column="15" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="15" />
+        <state relative-caret-position="1126">
+          <caret line="128" column="10" lean-forward="true" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
           <folding>
             <element signature="e#1172#1571#0" expanded="false" />
             <element signature="e#1620#2193#0" expanded="false" />
-            <element signature="e#2732#3128#0" expanded="false" />
+            <element signature="e#2729#3125#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#645#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
