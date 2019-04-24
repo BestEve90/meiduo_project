@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69234a9e-bd2f-4f54-83cc-21637bbdb7dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/ccp_sms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/xmltojson.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" afterPath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/404.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/cart.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/cart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail.html" />
@@ -28,6 +29,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/index.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/js/register.js" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/register.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/list.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/login.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" />
@@ -107,11 +109,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dev.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/settings/dev.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="144" column="19" lean-forward="false" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="19" />
+              <folding>
+                <element signature="e#1209#1608#0" expanded="false" />
+                <element signature="e#1657#2230#0" expanded="false" />
+                <element signature="e#2373#2633#0" expanded="false" />
+                <element signature="e#2766#3162#0" expanded="false" />
+                <element signature="e#4324#5622#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="114">
+              <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -122,10 +140,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="17" column="58" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="58" />
+            <state relative-caret-position="384">
+              <caret line="55" column="25" lean-forward="false" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,8 +152,8 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="184">
+              <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -144,13 +162,20 @@
       <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+            <state relative-caret-position="344">
+              <caret line="223" column="79" lean-forward="false" selection-start-line="223" selection-start-column="79" selection-end-line="223" selection-end-column="79" />
               <folding>
+                <element signature="e#962#1028#0" expanded="false" />
+                <element signature="e#1079#1616#0" expanded="false" />
                 <element signature="e#1207#1302#0" expanded="false" />
                 <element signature="e#1395#1579#0" expanded="false" />
+                <element signature="e#1706#2006#0" expanded="false" />
+                <element signature="e#2061#3048#0" expanded="false" />
+                <element signature="e#2149#2205#0" expanded="false" />
                 <element signature="e#2211#2326#0" expanded="false" />
+                <element signature="e#2389#3038#0" expanded="false" />
                 <element signature="e#2503#2563#0" expanded="false" />
+                <element signature="e#2603#2909#0" expanded="false" />
                 <element signature="e#2658#2801#0" expanded="false" />
                 <element signature="e#2807#2887#0" expanded="false" />
                 <element signature="e#2947#3023#0" expanded="false" />
@@ -160,38 +185,52 @@
                 <element signature="e#3368#3566#0" expanded="false" />
                 <element signature="e#3419#3484#0" expanded="false" />
                 <element signature="e#3490#3556#0" expanded="false" />
+                <element signature="e#3762#3877#0" expanded="false" />
                 <element signature="e#4031#4091#0" expanded="false" />
-                <element signature="e#4131#4440#0" expanded="false" />
                 <element signature="e#4186#4331#0" expanded="false" />
                 <element signature="e#4337#4418#0" expanded="false" />
                 <element signature="e#4478#4554#0" expanded="false" />
+                <element signature="e#4638#4874#0" expanded="false" />
+                <element signature="e#4674#4795#0" expanded="false" />
+                <element signature="e#4801#4863#0" expanded="false" />
                 <element signature="e#5213#5373#0" expanded="false" />
                 <element signature="e#5244#5300#0" expanded="false" />
                 <element signature="e#5306#5363#0" expanded="false" />
+                <element signature="e#5431#7747#0" expanded="false" />
+                <element signature="e#5476#5515#0" expanded="false" />
                 <element signature="e#5731#5813#0" expanded="false" />
-                <element signature="e#6018#6070#0" expanded="false" />
-                <element signature="e#6106#7588#0" expanded="false" />
-                <element signature="e#6193#7035#0" expanded="false" />
-                <element signature="e#6375#7002#0" expanded="false" />
-                <element signature="e#6419#6791#0" expanded="false" />
-                <element signature="e#6797#6976#0" expanded="false" />
-                <element signature="e#7041#7570#0" expanded="false" />
-                <element signature="e#7101#7268#0" expanded="false" />
-                <element signature="e#7274#7445#0" expanded="false" />
-                <element signature="e#7622#7737#0" expanded="false" />
-                <element signature="e#7785#8893#0" expanded="false" />
-                <element signature="e#8195#8292#0" expanded="false" />
-                <element signature="e#8306#8344#0" expanded="false" />
+                <element signature="e#8194#8291#0" expanded="false" />
+                <element signature="e#8305#8343#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xmltojson.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/xmltojson.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="960">
+              <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oauth_callback.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/oauth_callback.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="142" column="93" lean-forward="true" selection-start-line="142" selection-start-column="79" selection-end-line="142" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -200,40 +239,8 @@
       <file leaf-file-name="ccp_sms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/ccp_sms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCPRestSDK.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="395" column="22" lean-forward="true" selection-start-line="395" selection-start-column="22" selection-end-line="395" selection-end-column="22" />
-              <folding>
-                <element signature="e#534#557#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base64.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.5/base64.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="534" column="0" lean-forward="false" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.5/urllib/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="307" column="11" lean-forward="false" selection-start-line="307" selection-start-column="11" selection-end-line="307" selection-end-column="11" />
+            <state relative-caret-position="193">
+              <caret line="51" column="60" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -266,6 +273,8 @@
       <find>md5</find>
       <find>md5(signature)</find>
       <find>encodebytes(src)</find>
+      <find>sys_code_tip</find>
+      <find>sms_code_tip</find>
     </findStrings>
     <replaceStrings>
       <replace>except Exception as error</replace>
@@ -292,16 +301,17 @@
         <option value="$PROJECT_DIR$/logs/__init__.py" />
         <option value="$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.5/site-packages/django/conf/global_settings.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/static/js/host.js" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/users/urls.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/urls.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/register.html" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/ccp_sms.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/static/js/register.js" />
+        <option value="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
       </list>
     </option>
   </component>
@@ -383,6 +393,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -427,6 +455,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meiduo_mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -452,7 +502,7 @@
       <recent name="$PROJECT_DIR$/meiduo_mall/dev" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ccp_sms">
+  <component name="RunManager" selected="Django server.meiduo_mall">
     <configuration default="false" name="ccp_sms" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -850,7 +900,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556029818183</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="注册-植入云通讯">
+      <created>1556091597476</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556091597476</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -938,7 +995,8 @@
     <MESSAGE value="用户注册业务实现" />
     <MESSAGE value="注册-生成图形验证码" />
     <MESSAGE value="注册-将验证码保存在redis中" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册-将验证码保存在redis中" />
+    <MESSAGE value="注册-植入云通讯" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册-植入云通讯" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -947,50 +1005,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="50" column="27" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="27" />
-          <folding>
-            <element signature="e#1207#1302#0" expanded="false" />
-            <element signature="e#1395#1579#0" expanded="false" />
-            <element signature="e#2211#2326#0" expanded="false" />
-            <element signature="e#2503#2563#0" expanded="false" />
-            <element signature="e#2658#2801#0" expanded="false" />
-            <element signature="e#2807#2887#0" expanded="false" />
-            <element signature="e#2947#3023#0" expanded="false" />
-            <element signature="e#3097#3318#0" expanded="false" />
-            <element signature="e#3183#3243#0" expanded="false" />
-            <element signature="e#3249#3308#0" expanded="false" />
-            <element signature="e#3368#3566#0" expanded="false" />
-            <element signature="e#3419#3484#0" expanded="false" />
-            <element signature="e#3490#3556#0" expanded="false" />
-            <element signature="e#4031#4091#0" expanded="false" />
-            <element signature="e#4131#4440#0" expanded="false" />
-            <element signature="e#4186#4331#0" expanded="false" />
-            <element signature="e#4337#4418#0" expanded="false" />
-            <element signature="e#4478#4554#0" expanded="false" />
-            <element signature="e#5213#5373#0" expanded="false" />
-            <element signature="e#5244#5300#0" expanded="false" />
-            <element signature="e#5306#5363#0" expanded="false" />
-            <element signature="e#5731#5813#0" expanded="false" />
-            <element signature="e#6018#6070#0" expanded="false" />
-            <element signature="e#6106#7588#0" expanded="false" />
-            <element signature="e#6193#7035#0" expanded="false" />
-            <element signature="e#6375#7002#0" expanded="false" />
-            <element signature="e#6419#6791#0" expanded="false" />
-            <element signature="e#6797#6976#0" expanded="false" />
-            <element signature="e#7041#7570#0" expanded="false" />
-            <element signature="e#7101#7268#0" expanded="false" />
-            <element signature="e#7274#7445#0" expanded="false" />
-            <element signature="e#7622#7737#0" expanded="false" />
-            <element signature="e#7785#8893#0" expanded="false" />
-            <element signature="e#8195#8292#0" expanded="false" />
-            <element signature="e#8306#8344#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/host.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1008,7 +1022,7 @@
             <element signature="e#1657#2230#0" expanded="false" />
             <element signature="e#2373#2633#0" expanded="false" />
             <element signature="e#2766#3162#0" expanded="false" />
-            <element signature="e#4320#5618#0" expanded="false" />
+            <element signature="e#4324#5622#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1036,7 +1050,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1077,10 +1091,17 @@
         <state relative-caret-position="1200">
           <caret line="50" column="27" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="27" />
           <folding>
+            <element signature="e#962#1028#0" expanded="false" />
+            <element signature="e#1079#1616#0" expanded="false" />
             <element signature="e#1207#1302#0" expanded="false" />
             <element signature="e#1395#1579#0" expanded="false" />
+            <element signature="e#1706#2006#0" expanded="false" />
+            <element signature="e#2061#3048#0" expanded="false" />
+            <element signature="e#2149#2205#0" expanded="false" />
             <element signature="e#2211#2326#0" expanded="false" />
+            <element signature="e#2389#3038#0" expanded="false" />
             <element signature="e#2503#2563#0" expanded="false" />
+            <element signature="e#2603#2909#0" expanded="false" />
             <element signature="e#2658#2801#0" expanded="false" />
             <element signature="e#2807#2887#0" expanded="false" />
             <element signature="e#2947#3023#0" expanded="false" />
@@ -1090,28 +1111,22 @@
             <element signature="e#3368#3566#0" expanded="false" />
             <element signature="e#3419#3484#0" expanded="false" />
             <element signature="e#3490#3556#0" expanded="false" />
+            <element signature="e#3762#3877#0" expanded="false" />
             <element signature="e#4031#4091#0" expanded="false" />
-            <element signature="e#4131#4440#0" expanded="false" />
             <element signature="e#4186#4331#0" expanded="false" />
             <element signature="e#4337#4418#0" expanded="false" />
             <element signature="e#4478#4554#0" expanded="false" />
+            <element signature="e#4638#4874#0" expanded="false" />
+            <element signature="e#4674#4795#0" expanded="false" />
+            <element signature="e#4801#4863#0" expanded="false" />
             <element signature="e#5213#5373#0" expanded="false" />
             <element signature="e#5244#5300#0" expanded="false" />
             <element signature="e#5306#5363#0" expanded="false" />
+            <element signature="e#5431#7747#0" expanded="false" />
+            <element signature="e#5476#5515#0" expanded="false" />
             <element signature="e#5731#5813#0" expanded="false" />
-            <element signature="e#6018#6070#0" expanded="false" />
-            <element signature="e#6106#7588#0" expanded="false" />
-            <element signature="e#6193#7035#0" expanded="false" />
-            <element signature="e#6375#7002#0" expanded="false" />
-            <element signature="e#6419#6791#0" expanded="false" />
-            <element signature="e#6797#6976#0" expanded="false" />
-            <element signature="e#7041#7570#0" expanded="false" />
-            <element signature="e#7101#7268#0" expanded="false" />
-            <element signature="e#7274#7445#0" expanded="false" />
-            <element signature="e#7622#7737#0" expanded="false" />
-            <element signature="e#7785#8893#0" expanded="false" />
-            <element signature="e#8195#8292#0" expanded="false" />
-            <element signature="e#8306#8344#0" expanded="false" />
+            <element signature="e#8194#8291#0" expanded="false" />
+            <element signature="e#8305#8343#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1251,13 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/host.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1280,49 +1288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/settings/dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="144" column="15" lean-forward="false" selection-start-line="144" selection-start-column="15" selection-end-line="144" selection-end-column="15" />
-          <folding>
-            <element signature="e#1209#1608#0" expanded="false" />
-            <element signature="e#1657#2230#0" expanded="false" />
-            <element signature="e#2373#2633#0" expanded="false" />
-            <element signature="e#2766#3162#0" expanded="false" />
-            <element signature="e#4320#5618#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/captcha/captcha.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="219" column="5" lean-forward="false" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/3e84261/505442f6-0215-4d15-bf29-c9c72123f873/meiduo_mall.tb_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1336,78 +1301,6 @@
         <state relative-caret-position="-2404">
           <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="17" column="58" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="e#1207#1302#0" expanded="false" />
-            <element signature="e#1395#1579#0" expanded="false" />
-            <element signature="e#2211#2326#0" expanded="false" />
-            <element signature="e#2503#2563#0" expanded="false" />
-            <element signature="e#2658#2801#0" expanded="false" />
-            <element signature="e#2807#2887#0" expanded="false" />
-            <element signature="e#2947#3023#0" expanded="false" />
-            <element signature="e#3097#3318#0" expanded="false" />
-            <element signature="e#3183#3243#0" expanded="false" />
-            <element signature="e#3249#3308#0" expanded="false" />
-            <element signature="e#3368#3566#0" expanded="false" />
-            <element signature="e#3419#3484#0" expanded="false" />
-            <element signature="e#3490#3556#0" expanded="false" />
-            <element signature="e#4031#4091#0" expanded="false" />
-            <element signature="e#4131#4440#0" expanded="false" />
-            <element signature="e#4186#4331#0" expanded="false" />
-            <element signature="e#4337#4418#0" expanded="false" />
-            <element signature="e#4478#4554#0" expanded="false" />
-            <element signature="e#5213#5373#0" expanded="false" />
-            <element signature="e#5244#5300#0" expanded="false" />
-            <element signature="e#5306#5363#0" expanded="false" />
-            <element signature="e#5731#5813#0" expanded="false" />
-            <element signature="e#6018#6070#0" expanded="false" />
-            <element signature="e#6106#7588#0" expanded="false" />
-            <element signature="e#6193#7035#0" expanded="false" />
-            <element signature="e#6375#7002#0" expanded="false" />
-            <element signature="e#6419#6791#0" expanded="false" />
-            <element signature="e#6797#6976#0" expanded="false" />
-            <element signature="e#7041#7570#0" expanded="false" />
-            <element signature="e#7101#7268#0" expanded="false" />
-            <element signature="e#7274#7445#0" expanded="false" />
-            <element signature="e#7622#7737#0" expanded="false" />
-            <element signature="e#7785#8893#0" expanded="false" />
-            <element signature="e#8195#8292#0" expanded="false" />
-            <element signature="e#8306#8344#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1435,6 +1328,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/captcha/captcha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2212">
+          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/xmltojson.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1443,21 +1344,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/ccp_sms.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="-670">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#534#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/ccp_sms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="395" column="22" lean-forward="true" selection-start-line="395" selection-start-column="22" selection-end-line="395" selection-end-column="22" />
+        <state relative-caret-position="193">
+          <caret line="51" column="60" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="144" column="19" lean-forward="false" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="19" />
           <folding>
-            <element signature="e#534#557#0" expanded="true" />
+            <element signature="e#1209#1608#0" expanded="false" />
+            <element signature="e#1657#2230#0" expanded="false" />
+            <element signature="e#2373#2633#0" expanded="false" />
+            <element signature="e#2766#3162#0" expanded="false" />
+            <element signature="e#4324#5622#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/oauth_callback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="142" column="93" lean-forward="true" selection-start-line="142" selection-start-column="79" selection-end-line="142" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3e84261/505442f6-0215-4d15-bf29-c9c72123f873/meiduo_mall.tb_users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="55" column="25" lean-forward="false" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="223" column="79" lean-forward="false" selection-start-line="223" selection-start-column="79" selection-end-line="223" selection-end-column="79" />
+          <folding>
+            <element signature="e#962#1028#0" expanded="false" />
+            <element signature="e#1079#1616#0" expanded="false" />
+            <element signature="e#1207#1302#0" expanded="false" />
+            <element signature="e#1395#1579#0" expanded="false" />
+            <element signature="e#1706#2006#0" expanded="false" />
+            <element signature="e#2061#3048#0" expanded="false" />
+            <element signature="e#2149#2205#0" expanded="false" />
+            <element signature="e#2211#2326#0" expanded="false" />
+            <element signature="e#2389#3038#0" expanded="false" />
+            <element signature="e#2503#2563#0" expanded="false" />
+            <element signature="e#2603#2909#0" expanded="false" />
+            <element signature="e#2658#2801#0" expanded="false" />
+            <element signature="e#2807#2887#0" expanded="false" />
+            <element signature="e#2947#3023#0" expanded="false" />
+            <element signature="e#3097#3318#0" expanded="false" />
+            <element signature="e#3183#3243#0" expanded="false" />
+            <element signature="e#3249#3308#0" expanded="false" />
+            <element signature="e#3368#3566#0" expanded="false" />
+            <element signature="e#3419#3484#0" expanded="false" />
+            <element signature="e#3490#3556#0" expanded="false" />
+            <element signature="e#3762#3877#0" expanded="false" />
+            <element signature="e#4031#4091#0" expanded="false" />
+            <element signature="e#4186#4331#0" expanded="false" />
+            <element signature="e#4337#4418#0" expanded="false" />
+            <element signature="e#4478#4554#0" expanded="false" />
+            <element signature="e#4638#4874#0" expanded="false" />
+            <element signature="e#4674#4795#0" expanded="false" />
+            <element signature="e#4801#4863#0" expanded="false" />
+            <element signature="e#5213#5373#0" expanded="false" />
+            <element signature="e#5244#5300#0" expanded="false" />
+            <element signature="e#5306#5363#0" expanded="false" />
+            <element signature="e#5431#7747#0" expanded="false" />
+            <element signature="e#5476#5515#0" expanded="false" />
+            <element signature="e#5731#5813#0" expanded="false" />
+            <element signature="e#8194#8291#0" expanded="false" />
+            <element signature="e#8305#8343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

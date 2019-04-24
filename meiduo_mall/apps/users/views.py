@@ -1,5 +1,6 @@
 import re
 
+import django_redis
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
 from django import http
@@ -17,6 +18,7 @@ class RegisterView(View):
         pwd = request.POST.get('pwd')
         cpwd = request.POST.get('cpwd')
         phone = request.POST.get('phone')
+        msg_code_cli = request.POST.get('msg_code')
         allow = request.POST.get('allow')
 
         if not all([user_name, pwd, cpwd, phone, allow]):
@@ -42,6 +44,15 @@ class RegisterView(View):
 
         if User.objects.filter(mobile=phone).count()>0:
             return http.HttpResponseBadRequest('手机号已存在')
+
+        # 检验短信验证码
+        conn = django_redis.get_redis_connection('identification')
+        msg_code_server = conn.get(phone)
+        if msg_code_server is None:
+            return http.HttpResponseBadRequest('验证码已过期')
+        msg_code_server = msg_code_server.decode()
+        if msg_code_server !=msg_code_cli:
+            return http.HttpResponseBadRequest('验证码填写有误')
 
         # 处理
         user = User.objects.create_user(username=user_name,password=pwd,mobile=phone)
