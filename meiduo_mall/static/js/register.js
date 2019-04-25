@@ -179,7 +179,7 @@ var vm = new Vue({
                     // 表示后端发送短信成功
                     if (response.data.code == '0') {
                         // 倒计时60秒，60秒后允许用户再次点击发送短信验证码的按钮
-                        var num = 5;
+                        var num = 60;
                         // 设置一个计时器
                         var t = setInterval(() => {
                             if (num == 1) {

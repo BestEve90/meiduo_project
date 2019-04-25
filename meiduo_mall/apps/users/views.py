@@ -49,10 +49,10 @@ class RegisterView(View):
         conn = django_redis.get_redis_connection('identification')
         msg_code_server = conn.get(phone)
         if msg_code_server is None:
-            return http.HttpResponseBadRequest('验证码已过期')
+            return render(request,'register.html',{'error_sms_message':'短信验证码已过期'})
         msg_code_server = msg_code_server.decode()
         if msg_code_server !=msg_code_cli:
-            return http.HttpResponseBadRequest('验证码填写有误')
+            return render(request,'register.html',{'error_sms_message':'短信验证码填写有误'})
 
         # 处理
         user = User.objects.create_user(username=user_name,password=pwd,mobile=phone)

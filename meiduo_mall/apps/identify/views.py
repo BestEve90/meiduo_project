@@ -46,12 +46,18 @@ class MessageIdentify(View):
         # 对比图形验证码
         image_code_server = image_code_server.decode()
         if image_code_cli.lower() != image_code_server.lower():
-            return http.JsonResponse({'code': 0, 'errmsg': '验证码填写错误'})
+            return http.JsonResponse({'code': 0, 'errmsg': '图形验证码填写错误'})
+
+        # 校验短信验证码发送频率
+        send_flag = conn.get('sendflag_%s' % mobile)
+        if send_flag:
+            return http.HttpResponse('发送短信过于频繁')
 
         # 生成短信验证码
         sms_code = '%06d' % random.randint(0,999999)
-        # 保存验证码
+        # 保存验证码和sendflag(防止验证码发送过于频繁)
         conn.setex(mobile,constants.Message_CODE_EXPIRES,sms_code)
+        conn.setex('sendflag_%s' % mobile,constants.Send_SMS_INTERVAL,1)
         # 发送验证码
         CCP().send_template_sms(mobile, [sms_code, constants.Message_CODE_EXPIRES,], 1)
         return http.JsonResponse({'code': 0, 'errmsg': '短信发送成功'})
