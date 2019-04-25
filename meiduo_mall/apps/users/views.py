@@ -45,7 +45,7 @@ class RegisterView(View):
         if User.objects.filter(mobile=phone).count()>0:
             return http.HttpResponseBadRequest('手机号已存在')
 
-        # 检验短信验证码
+        # 检验短信验证码  问题:新返回的页面一直存在error_sms_message这条信息
         conn = django_redis.get_redis_connection('identification')
         msg_code_server = conn.get(phone)
         if msg_code_server is None:

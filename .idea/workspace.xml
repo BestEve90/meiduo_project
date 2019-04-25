@@ -1,42 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69234a9e-bd2f-4f54-83cc-21637bbdb7dc" name="Default" comment="注册-短信验证(云通讯账号不对)">
+    <list id="69234a9e-bd2f-4f54-83cc-21637bbdb7dc" name="Default" comment="" />
+    <list default="true" id="e0b5834c-5e4d-46be-a3af-7b3b8a0f2fb9" name="注册-短信验证(防止验证码发送过于频繁)" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/404.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/cart.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/1.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/10.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/11.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/12.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/13.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/14.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/15.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/16.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/2.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/3.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/4.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/5.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/6.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/7.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/8.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/detail/9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/index.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/js/register.js" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/list.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/login.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_info.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_pass.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_pass.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_site.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_site.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/register.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -111,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
-              <caret line="61" column="82" lean-forward="true" selection-start-line="61" selection-start-column="82" selection-end-line="61" selection-end-column="82" />
+              <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -120,8 +89,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="36" />
+            <state relative-caret-position="262">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,7 +155,7 @@
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
-              <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+              <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -256,10 +225,10 @@
         <option value="$PROJECT_DIR$/meiduo_mall/libs/yuntongxun/CCPRestSDK.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/register.html" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/static/js/register.js" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/users/views.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/identify/views.py" />
       </list>
     </option>
   </component>
@@ -1021,9 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,8 +1060,6 @@
             <element signature="e#5213#5373#0" expanded="false" />
             <element signature="e#5244#5300#0" expanded="false" />
             <element signature="e#5306#5363#0" expanded="false" />
-            <element signature="e#5431#7748#0" expanded="false" />
-            <element signature="e#5476#5515#0" expanded="false" />
             <element signature="e#5731#5813#0" expanded="false" />
             <element signature="e#8195#8292#0" expanded="false" />
             <element signature="e#8306#8344#0" expanded="false" />
@@ -1268,7 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2404">
           <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3408">
           <caret line="142" column="93" lean-forward="false" selection-start-line="142" selection-start-column="79" selection-end-line="142" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,14 +1326,6 @@
             <element signature="e#2766#3162#0" expanded="false" />
             <element signature="e#4324#5622#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1417,26 +1372,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        <state relative-caret-position="246">
+          <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/register.html">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="61" column="82" lean-forward="true" selection-start-line="61" selection-start-column="82" selection-end-line="61" selection-end-column="82" />
+        <state relative-caret-position="48">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/identify/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="36" />
+        <state relative-caret-position="262">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
