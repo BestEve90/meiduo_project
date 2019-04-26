@@ -1,7 +1,7 @@
 import re
 
 import django_redis
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from django import http
 from django.views import View
@@ -103,4 +103,12 @@ class LoginView(View):
             request.session.set_expiry(None)
         response = redirect('/')
         response.set_cookie('username', username)
+        return response
+
+
+class LogoutView(View):
+    def get(self,request):
+        logout(request)
+        response=redirect('/')
+        response.delete_cookie('username')
         return response
