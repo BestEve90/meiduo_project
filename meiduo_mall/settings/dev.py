@@ -25,7 +25,9 @@ SECRET_KEY = 'd@nbx(@)6c&nmeiyze%z1x9w=@2i)1^)!16_@(24^r9l%c%ky&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.meiduo.site'
+]
 
 
 # Application definition
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'identify.apps.IdentifyConfig',
+    'oauth.apps.OauthConfig',
 ]
 
 MIDDLEWARE = [
@@ -195,3 +198,8 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+# QQ授权信息
+QQ_CLIENT_ID = '101518219'
+QQ_CLIENT_SECRET = '418d84ebdc7241efb79536886ae95224'
+QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth_callback'

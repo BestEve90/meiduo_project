@@ -34,7 +34,7 @@ class MessageIdentify(View):
         image_code_server = conn.get(image_code_id)
 
         if image_code_server is None:
-            return http.JsonResponse({'code': RETCODE.IMAGECODEERR, 'errmsg': '验证码已失效'})
+            return http.JsonResponse({'code': RETCODE.IMAGECODEERR, 'errmsg': '图形验证码已失效'})
 
         # 删除图形验证码
         try:

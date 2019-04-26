@@ -101,7 +101,7 @@ class LoginView(View):
 
         login(request, user)
         if not remembered:
-            request.session.set_expire(0)
+            request.session.set_expiry(0)
         else:
             request.session.set_expiry(None)
         return redirect('/')
