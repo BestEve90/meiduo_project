@@ -9,11 +9,6 @@ from django.views import View
 from users.models import User
 
 
-class IndexView(View):
-    def get(self, request):
-        return render(request, 'index.html')
-
-
 class RegisterView(View):
     def get(self, request):
         return render(request, 'register.html')
@@ -65,7 +60,9 @@ class RegisterView(View):
         login(request, user)
 
         # 响应
-        return redirect('/')
+        response = redirect('/')
+        response.set_cookie('username', user_name)
+        return response
 
 
 class UserCheckView(View):
@@ -104,4 +101,6 @@ class LoginView(View):
             request.session.set_expiry(0)
         else:
             request.session.set_expiry(None)
-        return redirect('/')
+        response = redirect('/')
+        response.set_cookie('username', username)
+        return response
