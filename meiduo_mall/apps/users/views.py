@@ -1,12 +1,16 @@
 import re
 
 import django_redis
+import logging
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django import http
 from django.views import View
 
 from users.models import User
+
+logger = logging.getLogger('django')
 
 
 class RegisterView(View):
@@ -107,8 +111,14 @@ class LoginView(View):
 
 
 class LogoutView(View):
-    def get(self,request):
+    def get(self, request):
         logout(request)
-        response=redirect('/')
+        response = redirect('/')
         response.delete_cookie('username')
         return response
+
+
+class InfoView(LoginRequiredMixin, View):
+    def get(self, request):
+        logger.info(request.user)
+        return render(request, 'user_center_info.html')

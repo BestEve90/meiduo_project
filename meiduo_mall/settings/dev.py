@@ -205,3 +205,5 @@ AUTH_USER_MODEL = 'users.User'
 QQ_CLIENT_ID = '101518219'
 QQ_CLIENT_SECRET = '418d84ebdc7241efb79536886ae95224'
 QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth_callback'
+
+LOGIN_URL='/login/'
