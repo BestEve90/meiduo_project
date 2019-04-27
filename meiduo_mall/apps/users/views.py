@@ -96,7 +96,7 @@ class LoginView(View):
         if not re.match('^[0-9A-Za-z]{8,20}$', pwd):
             return http.HttpResponseBadRequest('请输入8-12位的密码')
 
-        user = authenticate(username=username, password=pwd)
+        user = authenticate(username=username, password=pwd)  # username可以是用户名或手机号
         if user == None:
             return render(request, 'login.html', {'loginerror': '用户名或密码错误'})
 
@@ -106,6 +106,7 @@ class LoginView(View):
         else:
             request.session.set_expiry(None)
         response = redirect('/')
+        username = user.username
         response.set_cookie('username', username)
         return response
 
