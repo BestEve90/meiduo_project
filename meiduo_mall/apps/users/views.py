@@ -65,7 +65,7 @@ class RegisterView(View):
 
         # 响应
         response = redirect('/')
-        response.set_cookie('username', user_name)
+        response.set_cookie('username', user_name, max_age=60 * 60 * 24 * 15)
         return response
 
 
@@ -107,7 +107,7 @@ class LoginView(View):
             request.session.set_expiry(None)
         response = redirect('/')
         username = user.username
-        response.set_cookie('username', username)
+        response.set_cookie('username', username, max_age=60 * 60 * 24 * 15)
         return response
 
 
