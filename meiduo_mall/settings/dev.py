@@ -209,3 +209,5 @@ QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth_callback'
 LOGIN_URL='/login/'
 
 AUTHENTICATION_BACKENDS=['meiduo_mall.utils.auth_backend.AuthBackend']
+
+# 配置邮件服务器

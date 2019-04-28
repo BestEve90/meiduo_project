@@ -124,27 +124,27 @@ class LogoutView(View):
 
 class InfoView(LoginRequiredMixin, View):
     def get(self, request):
-        context={
-            'username':request.user.username,
-            'mobile':request.user.mobile,
-            'email':request.user.email,
-            'email_active':request.user.email_active
+        context = {
+            'username': request.user.username,
+            'mobile': request.user.mobile,
+            'email': request.user.email,
+            'email_active': request.user.email_active
         }
-        return render(request, 'user_center_info.html',context)
+        return render(request, 'user_center_info.html', context)
 
 
 class EmailView(View):
-    def put(self,request):
+    def put(self, request):
         email = json.loads(request.body.decode()).get('email')
         if not email:
             return http.HttpResponseBadRequest('邮箱为空')
-        if not re.match('[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}',email):
+        if not re.match('^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
             return http.HttpResponseBadRequest('邮箱格式错误')
         try:
-            request.user.email=email
+            request.user.email = email
+            request.user.save()
         except Exception as e:
             logger.error(e)
-            return http.JsonResponse({'code':RETCODE.EMAILERR,'errmsg':'添加邮箱失败'})
+            return http.JsonResponse({'code': RETCODE.EMAILERR, 'errmsg': '添加邮箱失败'})
+        # 发送邮件
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '添加邮箱成功'})
-
-

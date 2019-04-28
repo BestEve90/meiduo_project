@@ -54,6 +54,7 @@ class MessageIdentify(View):
 
         # 生成短信验证码
         sms_code = '%06d' % random.randint(0, 999999)
+        logger.info(sms_code)
         # 保存验证码和sendflag(防止验证码发送过于频繁)
         pl = conn.pipeline()
         pl.setex('sms_%s' % mobile, constants.Message_CODE_EXPIRES, sms_code)
@@ -61,5 +62,5 @@ class MessageIdentify(View):
         pl.execute()
         # 发送验证码
         # CCP().send_template_sms(mobile, [sms_code, constants.Message_CODE_EXPIRES / 60], 1)
-        ccp_sms_celery.delay(mobile, [sms_code, constants.Message_CODE_EXPIRES / 60], 1)
+        # ccp_sms_celery.delay(mobile, [sms_code, constants.Message_CODE_EXPIRES / 60], 1)
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '短信发送成功'})
