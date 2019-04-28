@@ -65,7 +65,7 @@ class RegisterView(View):
 
         # 响应
         response = redirect('/')
-        response.set_cookie('username', user_name, max_age=60 * 60 * 24 * 15)
+        response.set_cookie('username', user_name, max_age=60 * 60 * 24 * 14)
         return response
 
 
@@ -101,13 +101,13 @@ class LoginView(View):
             return render(request, 'login.html', {'loginerror': '用户名或密码错误'})
 
         login(request, user)
-        if not remembered:
-            request.session.set_expiry(0)
-        else:
-            request.session.set_expiry(None)
         response = redirect('/')
         username = user.username
-        response.set_cookie('username', username, max_age=60 * 60 * 24 * 15)
+        if not remembered:
+            request.session.set_expiry(0)
+            response.set_cookie('username', username)
+        else:
+            response.set_cookie('username', username, max_age=60 * 60 * 24 * 14)
         return response
 
 
@@ -121,5 +121,10 @@ class LogoutView(View):
 
 class InfoView(LoginRequiredMixin, View):
     def get(self, request):
-        logger.info(request.user)
-        return render(request, 'user_center_info.html')
+        context={
+            'username':request.user.username,
+            'mobile':request.user.mobile,
+            'email':request.user.email,
+            'email_active':request.user.email_active
+        }
+        return render(request, 'user_center_info.html',context)
