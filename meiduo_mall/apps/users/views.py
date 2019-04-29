@@ -1,6 +1,6 @@
 import json
 import re
-
+from celery_tasks.email.tasks import send_email
 import django_redis
 import logging
 from django.contrib.auth import login, authenticate, logout
@@ -8,9 +8,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django import http
 from django.views import View
-
+from meiduo_mall.utils import signature_serializer
+from users import constants
 from users.models import User
-
+from django.conf import settings
 from meiduo_mall.utils.response_code import RETCODE
 
 logger = logging.getLogger('django')
@@ -147,4 +148,30 @@ class EmailView(View):
             logger.error(e)
             return http.JsonResponse({'code': RETCODE.EMAILERR, 'errmsg': '添加邮箱失败'})
         # 发送邮件
+        # 将user.id加密成token放在激活链接里,以便后面解密找到对应的用户,设置邮箱激活状态
+        token = signature_serializer.generate_access_token({'userid': request.user.id}, constants.EMAIL_EXPIRE_TIME)
+        # 激活连接包括url和查询字符串token
+        verify_url = settings.EMAIL_ACTIVE_URL + '?token=' + token
+        send_email.delay(email, verify_url)
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '添加邮箱成功'})
+
+
+class EmailVerifyView(View):
+    def get(self, request):
+        # 获取
+        token=request.GET.get('token')
+        # 验证
+        try:
+            userid=signature_serializer.check_access_token(token,constants.EMAIL_EXPIRE_TIME).get('userid')
+        except:
+            return http.HttpResponseBadRequest('激活链接已失效')
+        # 处理
+        try:
+            user=User.objects.get(pk=userid)
+        except:
+            return http.HttpResponseBadRequest('激活链接无效')
+        else:
+            user.email_active=True
+            user.save()
+        # 响应
+        return redirect('/info/')

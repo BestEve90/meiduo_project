@@ -211,3 +211,10 @@ LOGIN_URL='/login/'
 AUTHENTICATION_BACKENDS=['meiduo_mall.utils.auth_backend.AuthBackend']
 
 # 配置邮件服务器
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.163.com'
+EMAIL_PORT=25
+EMAIL_HOST_USER='hxheve@163.com'
+EMAIL_HOST_PASSWORD='hxhdj25185661'
+EMAIL_FROM='美多商城<hxheve@163.com>'
+EMAIL_ACTIVE_URL='http://www.meiduo.site:8000/emails/verification/'

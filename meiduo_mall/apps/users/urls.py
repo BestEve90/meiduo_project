@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^logout/$', views.LogoutView.as_view(), name='logout'),
     url(r'^info/$', views.InfoView.as_view(), name='logout'),
     url(r'^emails/$', views.EmailView.as_view(), name='message_identify'),
+    url(r'^emails/verification/$', views.EmailVerifyView.as_view(), name='message_identify'),
 
 ]
