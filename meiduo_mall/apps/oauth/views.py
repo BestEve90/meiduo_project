@@ -26,7 +26,7 @@ class OauthURLView(View):
         return http.JsonResponse({'code': RETCODE.OK, 'login_url': qq_url})
 
 
-class OauthOpenidView(View):
+class OauthCallBackView(View):
     def get(self, request):
         code = request.GET.get('code')
         next_url = request.GET.get('state')

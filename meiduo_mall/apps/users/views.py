@@ -134,7 +134,7 @@ class InfoView(LoginRequiredMixin, View):
         return render(request, 'user_center_info.html', context)
 
 
-class EmailView(View):
+class EmailView(LoginRequiredMixin, View):
     def put(self, request):
         email = json.loads(request.body.decode()).get('email')
         if not email:
@@ -159,19 +159,19 @@ class EmailView(View):
 class EmailVerifyView(View):
     def get(self, request):
         # 获取
-        token=request.GET.get('token')
+        token = request.GET.get('token')
         # 验证
         try:
-            userid=signature_serializer.check_access_token(token,constants.EMAIL_EXPIRE_TIME).get('userid')
+            userid = signature_serializer.check_access_token(token, constants.EMAIL_EXPIRE_TIME).get('userid')
         except:
             return http.HttpResponseBadRequest('激活链接已失效')
         # 处理
         try:
-            user=User.objects.get(pk=userid)
+            user = User.objects.get(pk=userid)
         except:
             return http.HttpResponseBadRequest('激活链接无效')
         else:
-            user.email_active=True
+            user.email_active = True
             user.save()
         # 响应
         return redirect('/info/')

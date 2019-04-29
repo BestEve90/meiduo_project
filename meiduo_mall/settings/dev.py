@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'identify.apps.IdentifyConfig',
     'oauth.apps.OauthConfig',
     'contents.apps.ContentsConfig',
+    'areas.apps.AreasConfig',
 
 ]
 
