@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'oauth.apps.OauthConfig',
     'contents.apps.ContentsConfig',
     'areas.apps.AreasConfig',
+    'goods.apps.GoodsConfig',
 
 ]
 
