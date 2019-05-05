@@ -14,5 +14,8 @@ urlpatterns = [
     url(r'^emails/verification/$', views.EmailVerifyView.as_view(), name='message_identify'),
     url(r'^addresses/$', views.AdressesView.as_view(), name='index'),
     url(r'^addresses/create/$', views.AdressesCreateView.as_view(), name='index'),
+    url(r'^addresses/(?P<address_id>\d+)/$', views.AdressesUpdateView.as_view(), name='index'),
+    url(r'^addresses/(?P<address_id>\d+)/default/$', views.AdressesDefaulteView.as_view(), name='index'),
+    url(r'^addresses/(?P<address_id>\d+)/title/$', views.AdressesTitleView.as_view(), name='index'),
 
 ]
