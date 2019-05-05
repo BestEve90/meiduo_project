@@ -221,13 +221,13 @@ class AdressesCreateView(LoginRequiredMixin, View):
         # 验证(非空,电话格式,邮箱格式)
         if not all([receiver, province_id, city_id, district_id, place, mobile]):
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '参数不全'})
-        if not re.match(r'^1[345789]\d{9}$',mobile):
+        if not re.match(r'^1[345789]\d{9}$', mobile):
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '手机号格式错误'})
         if tel:
-            if not re.match(r'^(0[0-9]{2,3}-)?([2-9][0-9]{6,7})+(-[0-9]{1,4})?$',tel):
+            if not re.match(r'^(0[0-9]{2,3}-)?([2-9][0-9]{6,7})+(-[0-9]{1,4})?$', tel):
                 return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '电话格式错误'})
         if email:
-            if not re.match(r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$',email):
+            if not re.match(r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
                 return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '邮箱格式错误'})
 
         # 处理(创建收货地址并返回)
@@ -264,6 +264,7 @@ class AdressesUpdateView(LoginRequiredMixin, View):
             user.default_address = None
             user.save()
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
+
     def put(self, request, address_id):
         new_address_info = json.loads(request.body.decode())
         receiver = new_address_info.get('receiver')
@@ -324,3 +325,30 @@ class AdressesTitleView(LoginRequiredMixin, View):
         address.title = title
         address.save()
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
+
+
+class PassWordView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'user_center_pass.html')
+
+    def post(self, request):
+        old_pwd = request.POST.get('old_pwd')
+        new_pwd = request.POST.get('new_pwd')
+        new_cpwd = request.POST.get('new_cpwd')
+        # 检验
+        user = request.user
+        if not all([old_pwd, new_cpwd, new_pwd]):
+            return http.HttpResponseBadRequest('数据不能为空')
+
+        if not user.check_password(old_pwd):
+            return http.HttpResponseBadRequest('原始密码错误')
+
+        if not re.match(r'^[0-9A-Za-z]{8,20}$', new_pwd):
+            return http.HttpResponseBadRequest('新密码格式不对')
+
+        if new_pwd != new_cpwd:
+            return http.HttpResponseBadRequest('两次输入的新密码不一致')
+
+        user.set_password(new_pwd)
+        user.save()
+        return render(request, 'user_center_pass.html')
