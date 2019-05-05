@@ -10,7 +10,7 @@ from django import http
 from django.views import View
 from meiduo_mall.utils import signature_serializer
 from users import constants
-from users.models import User
+from users.models import User, Address
 from django.conf import settings
 from meiduo_mall.utils.response_code import RETCODE
 
@@ -47,7 +47,7 @@ class RegisterView(View):
             return http.HttpResponseBadRequest('两次输入的密码不一致')
 
         # 检验手机号
-        if not re.match('^1[345789]\d{9}$', phone):
+        if not re.match(r'^1[345789]\d{9}$', phone):
             return http.HttpResponseBadRequest('请输入正确的手机号码')
 
         if User.objects.filter(mobile=phone).count() > 0:
@@ -57,14 +57,19 @@ class RegisterView(View):
         conn = django_redis.get_redis_connection('identification')
         msg_code_server = conn.get('sms_%s' % phone)
         if msg_code_server is None:
-            return render(request, 'register.html', {'error_sms_message': '短信验证码已过期'})
+            return render(
+                request, 'register.html', {
+                    'error_sms_message': '短信验证码已过期'})
         msg_code_server = msg_code_server.decode()
         if msg_code_server != msg_code_cli:
-            return render(request, 'register.html', {'error_sms_message': '短信验证码填写有误'})
+            return render(
+                request, 'register.html', {
+                    'error_sms_message': '短信验证码填写有误'})
         conn.delete('sms_%s' % phone)
 
         # 处理
-        user = User.objects.create_user(username=user_name, password=pwd, mobile=phone)
+        user = User.objects.create_user(
+            username=user_name, password=pwd, mobile=phone)
         login(request, user)
 
         # 响应
@@ -100,8 +105,10 @@ class LoginView(View):
         if not re.match('^[0-9A-Za-z]{8,20}$', pwd):
             return http.HttpResponseBadRequest('请输入8-12位的密码')
 
-        user = authenticate(username=username, password=pwd)  # username可以是用户名或手机号
-        if user == None:
+        user = authenticate(
+            username=username,
+            password=pwd)  # username可以是用户名或手机号
+        if user is None:
             return render(request, 'login.html', {'loginerror': '用户名或密码错误'})
 
         login(request, user)
@@ -111,7 +118,10 @@ class LoginView(View):
             request.session.set_expiry(0)
             response.set_cookie('username', username)
         else:
-            response.set_cookie('username', username, max_age=60 * 60 * 24 * 14)
+            response.set_cookie(
+                'username',
+                username,
+                max_age=60 * 60 * 24 * 14)
         return response
 
 
@@ -139,17 +149,21 @@ class EmailView(LoginRequiredMixin, View):
         email = json.loads(request.body.decode()).get('email')
         if not email:
             return http.HttpResponseBadRequest('邮箱为空')
-        if not re.match('^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
+        if not re.match(
+            r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$',
+                email):
             return http.HttpResponseBadRequest('邮箱格式错误')
         try:
             request.user.email = email
             request.user.save()
         except Exception as e:
             logger.error(e)
-            return http.JsonResponse({'code': RETCODE.EMAILERR, 'errmsg': '添加邮箱失败'})
+            return http.JsonResponse(
+                {'code': RETCODE.EMAILERR, 'errmsg': '添加邮箱失败'})
         # 发送邮件
         # 将user.id加密成token放在激活链接里,以便后面解密找到对应的用户,设置邮箱激活状态
-        token = signature_serializer.generate_access_token({'userid': request.user.id}, constants.EMAIL_EXPIRE_TIME)
+        token = signature_serializer.generate_access_token(
+            {'userid': request.user.id}, constants.EMAIL_EXPIRE_TIME)
         # 激活连接包括url和查询字符串token
         verify_url = settings.EMAIL_ACTIVE_URL + '?token=' + token
         send_email.delay(email, verify_url)
@@ -162,16 +176,55 @@ class EmailVerifyView(View):
         token = request.GET.get('token')
         # 验证
         try:
-            userid = signature_serializer.check_access_token(token, constants.EMAIL_EXPIRE_TIME).get('userid')
-        except:
+            userid = signature_serializer.check_access_token(
+                token, constants.EMAIL_EXPIRE_TIME).get('userid')
+        except BaseException:
             return http.HttpResponseBadRequest('激活链接已失效')
         # 处理
         try:
             user = User.objects.get(pk=userid)
-        except:
+        except BaseException:
             return http.HttpResponseBadRequest('激活链接无效')
         else:
             user.email_active = True
             user.save()
         # 响应
         return redirect('/info/')
+
+
+class AdressesView(View):
+    def get(self, request):
+        user = request.user
+        addresses = user.adresses
+        logger.info(addresses)
+        return render(request, 'user_center_site.html')
+
+
+class AdressesCreateView(View):
+    def post(self, request):
+        new_address_info = json.loads(request.body.decode())
+        receiver = new_address_info.get('receiver')
+        province_id = new_address_info.get('province_id')
+        city_id = new_address_info.get('city_id')
+        district_id = new_address_info.get('district_id')
+        place = new_address_info.get('place')
+        mobile = new_address_info.get('mobile')
+        tel = new_address_info.get('tel')
+        email = new_address_info.get('email')
+        # 验证(非空,电话格式,邮箱格式)
+
+        # 处理(创建收货地址并返回)
+        new_address = Address.objects.create(
+            user=request.user,
+            title=receiver,
+            receiver=receiver,
+            province_id=province_id,
+            city_id=city_id,
+            district_id=district_id,
+            place=place,
+            mobile=mobile,
+            tel=tel,
+            email=email
+        )
+        return http.JsonResponse(
+            {'code': RETCODE.OK, 'errmsg': 'ok', 'address': new_address.to_dict()})

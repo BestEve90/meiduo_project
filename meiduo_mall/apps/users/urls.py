@@ -12,5 +12,7 @@ urlpatterns = [
     url(r'^info/$', views.InfoView.as_view(), name='logout'),
     url(r'^emails/$', views.EmailView.as_view(), name='message_identify'),
     url(r'^emails/verification/$', views.EmailVerifyView.as_view(), name='message_identify'),
+    url(r'^addresses/$', views.AdressesView.as_view(), name='index'),
+    url(r'^addresses/create/$', views.AdressesCreateView.as_view(), name='index'),
 
 ]
