@@ -19,7 +19,7 @@ def get_categories():
     }
     '''
     categories = {}
-    channels = GoodsChannel.objects.all()
+    channels = GoodsChannel.objects.order_by('group_id', 'sequence')
     for channel in channels:
         if channel.group_id not in categories.keys():
             categories[channel.group_id] = {
