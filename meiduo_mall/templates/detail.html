@@ -134,7 +134,7 @@
 			</div>
             {% for spec,options in spec_options.items() %}
                 <div class="type_select">
-                    <label>{{ spec }}</label>
+                    <label>{{ spec }}：</label>
                     {% for option in options %}
                         {% if option.selected %}
                             <a href="/detail/{{ option.sku_id }}/" class="select">{{ option.name }}</a>
@@ -224,9 +224,9 @@
 	</div>
 	</div>
 	<script>
-        var price = "";
-        var category_id = "";
-        var sku_id = "";
+        var price = "{{ sku.price }}";
+        var category_id = "{{ category_id }}";
+        var sku_id = "{{ sku.id }}";
     </script>
 	<script type="text/javascript" src="/static/js/common.js"></script>
 	<script type="text/javascript" src="/static/js/detail.js"></script>

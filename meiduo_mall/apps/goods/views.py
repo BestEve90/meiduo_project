@@ -79,9 +79,10 @@ class DetailView(View):
             ...
         }
         '''
-        sku_specifications = SKUSpecification.objects.filter(sku_id=sku_id)
-        current_spec_options = {sku_specification.spec.name: sku_specification.option for sku_specification in
-                                sku_specifications}
+        sku_specs= SKUSpecification.objects.filter(sku_id=sku_id)
+        current_spec_options = {sku_spec.spec_id: sku_spec.option_id for sku_spec in
+                                sku_specs}
+
 
         # spu所有sku具体规格选项
         skus_spec_options = {}
@@ -96,10 +97,10 @@ class DetailView(View):
             ...
         }
         '''
-        for skui in spu.sku_set.all():
-            skui_specifications = SKUSpecification.objects.filter(sku_id=skui.id)
-            skui_spec_options = {skui_specification.spec.name: skui_specification.option for skui_specification in
-                                 skui_specifications}
+        for skui in spu.sku_set.filter(is_launched=True):
+            skui_specs = SKUSpecification.objects.filter(sku_id=skui.id)
+            skui_spec_options = {skui_spec.spec_id: skui_spec.option_id for skui_spec in
+                                 skui_specs}
             skus_spec_options[tuple(skui_spec_options.values())] = skui.id
 
         # 给前端返回的spu对应的规格选项
@@ -125,11 +126,11 @@ class DetailView(View):
             spec_options[spec.name] = []
             for option in options:
                 url_spec_options = deepcopy(current_spec_options)
-                url_spec_options[spec.name] = option # 所链接的sku的具体规格选项
+                url_spec_options[spec.id] = option.id  # 所链接的sku的具体规格选项
 
                 spec_options[spec.name].append({
                     'name': option.value,  # 选项名称
-                    'selected': option == current_spec_options[spec.name],  # 是否当前商品的选项
+                    'selected': option.id == current_spec_options[spec.id],  # 是否当前商品的选项
                     'sku_id': skus_spec_options.get(tuple(url_spec_options.values()))  # 所链接的sku的id
                 })
 
@@ -139,6 +140,6 @@ class DetailView(View):
             'sku': sku,
             'spu': spu,
             'spec_options': spec_options,
-
+            'category_id': category.id
         }
         return render(request, 'detail.html', context)
