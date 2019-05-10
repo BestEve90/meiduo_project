@@ -1,3 +1,5 @@
+import datetime
+
 from django import http
 from django.core.paginator import Paginator
 from django.shortcuts import render
@@ -5,7 +7,7 @@ from django.views import View
 from meiduo_mall.utils.response_code import RETCODE
 from goods import contants
 from meiduo_mall.utils.category import get_categories
-from .models import GoodsCategory, SKU, SKUSpecification
+from .models import GoodsCategory, SKU, SKUSpecification, GoodsVisitCount
 from meiduo_mall.utils.breadcrumb import get_breadcrumb
 from copy import deepcopy
 
@@ -79,10 +81,9 @@ class DetailView(View):
             ...
         }
         '''
-        sku_specs= SKUSpecification.objects.filter(sku_id=sku_id)
+        sku_specs = SKUSpecification.objects.filter(sku_id=sku_id)
         current_spec_options = {sku_spec.spec_id: sku_spec.option_id for sku_spec in
                                 sku_specs}
-
 
         # spu所有sku具体规格选项
         skus_spec_options = {}
@@ -143,3 +144,23 @@ class DetailView(View):
             'category_id': category.id
         }
         return render(request, 'detail.html', context)
+
+
+class VisitCountView(View):
+    def post(self, request, category_id):
+        # 查询访问记录
+        t = datetime.datetime.now()
+        today = '%d-%02d-%02d' % (t.year, t.month, t.day)
+        try:
+            good_visit = GoodsVisitCount.objects.get(category_id=category_id, date=today)
+        except:
+            # 没查到,新建
+            GoodsVisitCount.objects.create(
+                category_id=category_id,
+                count=1,
+            )
+        else:
+            # 查到了,数量增加
+            good_visit.count += 1
+            good_visit.save()
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
