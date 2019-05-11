@@ -10,6 +10,7 @@ var vm = new Vue({
         category_id: category_id,
     },
     mounted(){
+        this.username=getCookie('username');
         // 获取购物车数据
         this.get_carts();
 

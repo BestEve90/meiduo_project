@@ -1,5 +1,6 @@
 import datetime
-
+import json
+import django_redis
 from django import http
 from django.core.paginator import Paginator
 from django.shortcuts import render
@@ -163,4 +164,33 @@ class VisitCountView(View):
             # 查到了,数量增加
             good_visit.count += 1
             good_visit.save()
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
+
+
+class HistoryView(View):
+    def post(self, request):
+        # 接收
+        sku_id = json.loads(request.body.decode()).get('sku_id')
+        # 验证
+        # 非空
+        if not all([sku_id]):
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '商品id不能为空'})
+        # 有效性
+        try:
+            SKU.objects.get(pk=sku_id)
+        except:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '商品id无效'})
+        # 用户验证
+        user = request.user
+        if not user.is_authenticated:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '用户未登录'})
+        # 处理
+        # 连接redis,将sku_id以list的形式存储在redis中, key为'history_user_id'
+        # 删除====>添加=====>截取5个
+        redis_conn = django_redis.get_redis_connection('history')
+        redis_pl = redis_conn.pipeline()
+        redis_pl.lrem('history%d' % user.id, 0, sku_id)
+        redis_pl.lpush('history%d' % user.id, sku_id)
+        redis_pl.ltrim('history%d' % user.id, 0, 4)
+        redis_pl.execute()
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
