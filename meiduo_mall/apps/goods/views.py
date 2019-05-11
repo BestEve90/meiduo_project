@@ -194,3 +194,24 @@ class HistoryView(View):
         redis_pl.ltrim('history%d' % user.id, 0, 4)
         redis_pl.execute()
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok'})
+
+    def get(self, request):
+        # 接收
+        user = request.user
+        # 验证
+        if not user.is_authenticated:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '用户未登录'})
+        # 处理
+        redis_conn = django_redis.get_redis_connection('history')
+        sku_ids = redis_conn.lrange('history%d' % user.id, 0, -1)
+        skus = []
+        for sku_id in sku_ids:
+            sku = SKU.objects.get(pk=int(sku_id.decode()))
+            skus.append({
+                'id': sku_id.decode(),
+                'name': sku.name,
+                'price': sku.price,
+                'default_image': sku.default_image.url
+            })
+        # 响应
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok', 'skus': skus})
