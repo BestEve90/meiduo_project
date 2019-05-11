@@ -13,7 +13,8 @@ from users import constants
 from users.models import User, Address
 from django.conf import settings
 from meiduo_mall.utils.response_code import RETCODE
-
+from django.contrib.sessions.middleware import SessionMiddleware
+from django.contrib.auth.middleware import AuthenticationMiddleware
 logger = logging.getLogger('django')
 
 

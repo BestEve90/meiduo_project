@@ -26,6 +26,7 @@ var vm = new Vue({
         },
         cart_total_count: 0, // 购物车总数量
         carts: [], // 购物车数据,
+        username: '',
     },
     mounted(){
         this.username=getCookie('username');

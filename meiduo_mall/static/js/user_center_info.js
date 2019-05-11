@@ -13,7 +13,7 @@ var vm = new Vue({
         error_email_message: '',
         send_email_btn_disabled: false,
         send_email_tip: '重新发送验证邮件',
-        histories: []
+        histories: [],
     },
     // ES6语法
     mounted() {
