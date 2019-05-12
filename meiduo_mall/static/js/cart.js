@@ -10,7 +10,7 @@ var vm = new Vue({
         total_selected_amount: 0,
         carts_tmp: [],
         username: '',
-        cart_skus: cart_skus,
+        // cart_skus: cart_skus,
     },
     computed: {
         selected_all(){
@@ -75,40 +75,40 @@ var vm = new Vue({
         // 减少操作
         on_minus(index){
             if (this.carts[index].count > 1) {
-                var count = this.carts[index].count - 1;
+                this.carts[index].count -= 1;
                 // this.carts[index].count = count; // 本地测试
-                this.update_count(index, count); // 请求服务器
+                this.update_count(index); // 请求服务器
             }
         },
         // 增加操作
         on_add(index){
-            var count = 1;
+            // var count = 1;
             if (this.carts[index].count < 5) {
-                count = this.carts[index].count + 1;
+                this.carts[index].count += 1;
             } else {
-                count = 5;
+                this.carts[index].count = 5;
                 alert('超过商品数量上限');
             }
             // this.carts[index].count = count; // 本地测试
-            this.update_count(index, count); // 请求服务器
+            this.update_count(index); // 请求服务器
         },
         // 数量输入框输入操作
         on_input(index){
             var count = parseInt(this.carts[index].count);
             if (isNaN(count) || count <= 0) {
-                count = 1;
+                this.carts[index].count = 1;
             } else if (count > 5) {
-                count = 5;
+                this.carts[index].count = 5;
                 alert('超过商品数量上限');
             }
-            this.update_count(index, count); // 请求服务器
+            this.update_count(index); // 请求服务器
         },
         // 更新购物车
-        update_count(index, count){
+        update_count(index){
             var url = this.host + '/carts/';
             axios.put(url, {
                 sku_id: this.carts[index].id,
-                count: count,
+                count: this.carts[index].count,
                 selected: this.carts[index].selected
             }, {
                 headers: {
@@ -119,8 +119,8 @@ var vm = new Vue({
             })
                 .then(response => {
                     if (response.data.code == '0') {
-                        // this.carts[index].count = response.data.cart_sku.count; // 无法触发页面更新
-                        Vue.set(this.carts, index, response.data.cart_sku); // 触发页面更新
+                        this.carts[index].count = response.data.cart_sku.count;
+                        // Vue.set(this.carts, index, response.data.cart_sku); // 触发页面更新
                         if (response.data.cart_sku.selected == 'True') {
                             this.carts[index].selected = true;
                         } else {

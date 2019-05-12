@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/meiduo_mall/static/cart.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/cart.html" />
+    <list default="true" id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="优化前端代码-后端在根据前端的指示修改成功后不再返回给前段数据,那万一后端的数据通过别的方式修改了呢?前端之前有做过更新吗" />
+    <list id="8f35e3c4-bcea-4d6b-ab6e-fa933ed33880" name="优化前端代码" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.rdb" afterPath="$PROJECT_DIR$/dump.rdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/carts/urls.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/carts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/carts/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/carts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" afterPath="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/goods_judge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/js/base.js" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/base.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/js/cart.js" afterPath="$PROJECT_DIR$/meiduo_mall/static/js/cart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/order_success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/pay_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/pay_success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/place_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/static/user_center_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/detail.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/index.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/search/search.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/search/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/user_center_info.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/user_center_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/user_center_pass.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/user_center_pass.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/user_center_site.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/user_center_site.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/cart.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/cart.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,8 +62,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/carts/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="858">
-                  <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+                <state relative-caret-position="525">
+                  <caret line="124" column="90" lean-forward="true" selection-start-line="124" selection-start-column="68" selection-end-line="124" selection-end-column="90" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -259,8 +245,8 @@
           <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/cart.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="76" column="73" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+                <state relative-caret-position="304">
+                  <caret line="73" column="18" lean-forward="true" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -269,36 +255,20 @@
           <file leaf-file-name="cart.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/cart.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="148" column="17" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="17" />
+                <state relative-caret-position="286">
+                  <caret line="153" column="26" lean-forward="true" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
                   <folding>
-                    <element signature="e#111#317#0" expanded="false" />
-                    <element signature="e#333#647#0" expanded="false" />
-                    <element signature="e#357#640#0" expanded="false" />
-                    <element signature="e#448#601#0" expanded="false" />
-                    <element signature="e#503#587#0" expanded="false" />
-                    <element signature="e#978#1459#0" expanded="false" />
-                    <element signature="e#1120#1337#0" expanded="false" />
-                    <element signature="e#1176#1246#0" expanded="false" />
-                    <element signature="e#1252#1323#0" expanded="false" />
-                    <element signature="e#2358#2605#0" expanded="false" />
-                    <element signature="e#2405#2595#0" expanded="false" />
-                    <element signature="e#3035#3344#0" expanded="false" />
-                    <element signature="e#3140#3182#0" expanded="false" />
-                    <element signature="e#3203#3280#0" expanded="false" />
-                    <element signature="e#3644#3721#0" expanded="false" />
-                    <element signature="e#4251#4342#0" expanded="false" />
-                    <element signature="e#4629#4784#0" expanded="false" />
-                    <element signature="e#4836#4979#0" expanded="false" />
-                    <element signature="e#5309#5386#0" expanded="false" />
-                    <element signature="e#6142#6210#0" expanded="false" />
-                    <element signature="e#6462#6539#0" expanded="false" />
-                    <element signature="e#7089#7157#0" expanded="false" />
-                    <element signature="e#7316#7356#0" expanded="false" />
-                    <element signature="e#7358#7553#0" expanded="false" />
-                    <element signature="e#7385#7462#0" expanded="false" />
-                    <element signature="e#7712#7802#0" expanded="false" />
-                    <element signature="e#8118#8186#0" expanded="false" />
+                    <element signature="e#336#650#0" expanded="false" />
+                    <element signature="e#360#643#0" expanded="false" />
+                    <element signature="e#451#604#0" expanded="false" />
+                    <element signature="e#506#590#0" expanded="false" />
+                    <element signature="e#1123#1340#0" expanded="false" />
+                    <element signature="e#1179#1249#0" expanded="false" />
+                    <element signature="e#1255#1326#0" expanded="false" />
+                    <element signature="e#6482#6559#0" expanded="false" />
+                    <element signature="e#7109#7177#0" expanded="false" />
+                    <element signature="e#7405#7482#0" expanded="false" />
+                    <element signature="e#8138#8206#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -378,9 +348,9 @@
         <option value="$PROJECT_DIR$/meiduo_mall/settings/dev.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/index.html" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/detail.html" />
-        <option value="$PROJECT_DIR$/meiduo_mall/static/js/cart.js" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/cart.html" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/carts/views.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/static/js/cart.js" />
       </list>
     </option>
   </component>
@@ -966,6 +936,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="" />
+      <changelist id="8f35e3c4-bcea-4d6b-ab6e-fa933ed33880" name="优化前端代码" comment="" />
       <created>1556369088475</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -1167,7 +1138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557581698042</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="登陆用户购物车的增删改查-redis">
+      <created>1557640912655</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1557640912655</updated>
+    </task>
+    <task id="LOCAL-00030" summary="优化前端代码">
+      <created>1557643132640</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1557643132640</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1180,7 +1165,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35702294" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46596858" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39921466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39921466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24915445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48560208" sideWeight="0.49212122" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1219,8 +1204,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="保存邮箱地址" />
-    <MESSAGE value="QQ绑定修改" />
     <MESSAGE value="发送及验证邮箱" />
     <MESSAGE value="新建areas应用" />
     <MESSAGE value="收货地址-省市区模型类" />
@@ -1244,7 +1227,9 @@
     <MESSAGE value="保存浏览记录" />
     <MESSAGE value="获取浏览记录" />
     <MESSAGE value="新建购物车应用" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建购物车应用" />
+    <MESSAGE value="登陆用户购物车的增删改查-redis" />
+    <MESSAGE value="优化前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化前端代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1253,13 +1238,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/utils/breadcrumb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/3e84261/112202bf-58a9-4a60-a025-3a53f0906cd2/meiduo_mall.tb_sku_specification">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1851,16 +1829,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="76" column="73" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+        <state relative-caret-position="304">
+          <caret line="73" column="18" lean-forward="true" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/vue-2.5.16.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="3289" column="2" lean-forward="false" selection-start-line="3289" selection-start-column="2" selection-end-line="3289" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/carts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="124" column="90" lean-forward="true" selection-start-line="124" selection-start-column="68" selection-end-line="124" selection-end-column="90" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1869,36 +1855,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/static/js/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="148" column="17" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="17" />
+        <state relative-caret-position="286">
+          <caret line="153" column="26" lean-forward="true" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
           <folding>
-            <element signature="e#111#317#0" expanded="false" />
-            <element signature="e#333#647#0" expanded="false" />
-            <element signature="e#357#640#0" expanded="false" />
-            <element signature="e#448#601#0" expanded="false" />
-            <element signature="e#503#587#0" expanded="false" />
-            <element signature="e#978#1459#0" expanded="false" />
-            <element signature="e#1120#1337#0" expanded="false" />
-            <element signature="e#1176#1246#0" expanded="false" />
-            <element signature="e#1252#1323#0" expanded="false" />
-            <element signature="e#2358#2605#0" expanded="false" />
-            <element signature="e#2405#2595#0" expanded="false" />
-            <element signature="e#3035#3344#0" expanded="false" />
-            <element signature="e#3140#3182#0" expanded="false" />
-            <element signature="e#3203#3280#0" expanded="false" />
-            <element signature="e#3644#3721#0" expanded="false" />
-            <element signature="e#4251#4342#0" expanded="false" />
-            <element signature="e#4629#4784#0" expanded="false" />
-            <element signature="e#4836#4979#0" expanded="false" />
-            <element signature="e#5309#5386#0" expanded="false" />
-            <element signature="e#6142#6210#0" expanded="false" />
-            <element signature="e#6462#6539#0" expanded="false" />
-            <element signature="e#7089#7157#0" expanded="false" />
-            <element signature="e#7316#7356#0" expanded="false" />
-            <element signature="e#7358#7553#0" expanded="false" />
-            <element signature="e#7385#7462#0" expanded="false" />
-            <element signature="e#7712#7802#0" expanded="false" />
-            <element signature="e#8118#8186#0" expanded="false" />
+            <element signature="e#336#650#0" expanded="false" />
+            <element signature="e#360#643#0" expanded="false" />
+            <element signature="e#451#604#0" expanded="false" />
+            <element signature="e#506#590#0" expanded="false" />
+            <element signature="e#1123#1340#0" expanded="false" />
+            <element signature="e#1179#1249#0" expanded="false" />
+            <element signature="e#1255#1326#0" expanded="false" />
+            <element signature="e#6482#6559#0" expanded="false" />
+            <element signature="e#7109#7177#0" expanded="false" />
+            <element signature="e#7405#7482#0" expanded="false" />
+            <element signature="e#8138#8206#0" expanded="false" />
           </folding>
         </state>
       </provider>

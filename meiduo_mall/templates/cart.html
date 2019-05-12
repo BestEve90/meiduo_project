@@ -69,7 +69,7 @@
 		<li class="col06">
 			<div class="num_add">
 				<a href="javascript:;" class="add fl" @click="on_add(index)">+</a>
-				<input type="text" class="num_show fl" :value="cart.count" autocomplete="off">
+				<input type="text" class="num_show fl" v-model="cart.count " autocomplete="off" @blur="on_input(index)">
 				<a href="javascript:;" class="minus fl" @click="on_minus(index)">-</a>
 			</div>
 		</li>
