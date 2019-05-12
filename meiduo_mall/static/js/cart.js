@@ -10,7 +10,6 @@ var vm = new Vue({
         total_selected_amount: 0,
         carts_tmp: [],
         username: '',
-        // cart_skus: cart_skus,
     },
     computed: {
         selected_all(){
