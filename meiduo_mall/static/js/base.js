@@ -1,5 +1,5 @@
 var vm = new Vue({
-    el: '#app',
+    el: '.header_con',
     // 修改Vue变量的读取语法，避免和django模板语法冲突
     delimiters: ['[[', ']]'],
     data: {
