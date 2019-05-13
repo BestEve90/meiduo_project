@@ -205,7 +205,9 @@ class CartsSimpleView(View):
             cart_dict = redis_conn.hgetall('carts%d' % user.id)
             cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
         else:
-            pass
+            cart_str = request.COOKIES.get('cart')
+            cart_dict = pickle_json.loads(cart_str)
+            cart_dict = {sku_id: cart['count'] for sku_id, cart in cart_dict.items()}
         cart_skus = []
         for sku_id, count in cart_dict.items():
             sku = SKU.objects.get(pk=sku_id)
