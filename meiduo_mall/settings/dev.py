@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'areas.apps.AreasConfig',
     'goods.apps.GoodsConfig',
     'carts.apps.CartsConfig',
+    'orders.apps.OrdersConfig',
 
     'haystack',
 
