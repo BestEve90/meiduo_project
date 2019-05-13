@@ -76,7 +76,7 @@
         <div class="pay_style_con clearfix">
             <input type="radio" name="pay_method" value="1">
             <label class="cash">货到付款</label>
-            <input type="radio" name="pay_method" value="2">
+            <input type="radio" name="pay_method" value="2" checked="checked">
             <label class="zhifubao"></label>
         </div>
     </div>
@@ -91,33 +91,27 @@
             <li class="col04">数量</li>
             <li class="col05">小计</li>
         </ul>
+        {% for sku in selected_cart_skus %}
         <ul class="goods_list_td clearfix">
-            <li class="col01">1</li>
-            <li class="col02"><img src="../static/images/goods/goods001.jpg"></li>
-            <li class="col03">华为 HUAWEI P10 Plus 6GB+64GB 钻雕金 移动联通电信4G手机 双卡双待</li>
+            <li class="col01">{{ sku.id }}</li>
+            <li class="col02"><img src="{{ sku.default_image_url }}"></li>
+            <li class="col03">{{ sku.name }}</li>
             <li class="col04">台</li>
-            <li class="col05">25.80元</li>
-            <li class="col06">1</li>
-            <li class="col07">25.80元</li>
+            <li class="col05">{{ sku.price }}元</li>
+            <li class="col06">{{ sku.count }}</li>
+            <li class="col07">{{ sku.total_amount }}元</li>
         </ul>
-        <ul class="goods_list_td clearfix">
-            <li class="col01">2</li>
-            <li class="col02"><img src="../static/images/goods/goods002.jpg"></li>
-            <li class="col03">Apple iPhoneX 64GB 深空灰色 移动联通电信4G手机</li>
-            <li class="col04">台</li>
-            <li class="col05">16.80元</li>
-            <li class="col06">1</li>
-            <li class="col07">16.80元</li>
-        </ul>
+        {% endfor %}
+
     </div>
 
     <h3 class="common_title">总金额结算</h3>
 
     <div class="common_list_con clearfix">
         <div class="settle_con">
-            <div class="total_goods_count">共<em>2</em>件商品，总金额<b>42.60元</b></div>
-            <div class="transit">运费：<b>10元</b></div>
-            <div class="total_pay">实付款：<b>52.60元</b></div>
+            <div class="total_goods_count">共<em>{{ total_count }}</em>件商品，总金额<b>{{ total_money }}元</b></div>
+            <div class="transit">运费：<b>{{ freight }}元</b></div>
+            <div class="total_pay">实付款：<b>{{ total_pay }}元</b></div>
         </div>
     </div>
 
