@@ -13,8 +13,9 @@ from users import constants
 from users.models import User, Address
 from django.conf import settings
 from meiduo_mall.utils.response_code import RETCODE
-from django.contrib.sessions.middleware import SessionMiddleware
-from django.contrib.auth.middleware import AuthenticationMiddleware
+from meiduo_mall.utils.cart_merge import cart_merge
+from meiduo_mall.utils import pickle_json
+
 logger = logging.getLogger('django')
 
 
@@ -72,10 +73,11 @@ class RegisterView(View):
         user = User.objects.create_user(
             username=user_name, password=pwd, mobile=phone)
         login(request, user)
-
         # 响应
         response = redirect('/')
         response.set_cookie('username', user_name, max_age=60 * 60 * 24 * 14)
+        # 合并购物车
+        cart_merge(request, response)
         return response
 
 
@@ -113,6 +115,7 @@ class LoginView(View):
             return render(request, 'login.html', {'loginerror': '用户名或密码错误'})
 
         login(request, user)
+        # 是否记住登录
         response = redirect('/')
         username = user.username
         if not remembered:
@@ -123,6 +126,8 @@ class LoginView(View):
                 'username',
                 username,
                 max_age=60 * 60 * 24 * 14)
+        # 合并购物车
+        cart_merge(request, response)
         return response
 
 

@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect
 from django.views import View
 
 from meiduo_mall.settings.dev import QQ_CLIENT_ID, QQ_CLIENT_SECRET, QQ_REDIRECT_URI
+from meiduo_mall.utils import pickle_json
+from meiduo_mall.utils.cart_merge import cart_merge
 from meiduo_mall.utils.response_code import RETCODE
 from meiduo_mall.utils.signature_serializer import *
 from oauth import constants
@@ -46,6 +48,8 @@ class OauthCallBackView(View):
             login(request, user)
             response = redirect(next_url)
             response.set_cookie('username', user.username)
+            # 合并购物车
+            cart_merge(request, response)
         return response
 
     def post(self, request):
@@ -88,4 +92,6 @@ class OauthCallBackView(View):
         next_url = request.GET.get('state')
         response = redirect(next_url)
         response.set_cookie('username', user.username, max_age=3600 * 24 * 14)
+        # 合并购物车
+        cart_merge(request, response)
         return response
