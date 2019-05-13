@@ -194,3 +194,24 @@ class CartsSelectionView(View):
                 cart_dict[sku_id]['selected'] = selected
             response.set_cookie('cart', pickle_json.dumps(cart_dict), max_age=constants.CART_EXPIRES)
         return response
+
+
+class CartsSimpleView(View):
+    def get(self, request):
+        user = request.user
+        cart_dict = {}
+        if user.is_authenticated:
+            redis_conn = get_redis_connection('carts')
+            cart_dict = redis_conn.hgetall('carts%d' % user.id)
+            cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
+        else:
+            pass
+        cart_skus = []
+        for sku_id, count in cart_dict.items():
+            sku = SKU.objects.get(pk=sku_id)
+            cart_skus.append({
+                'name': sku.name,
+                'count': count,
+                'default_image_url': sku.default_image.url
+            })
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': 'ok', 'cart_skus': cart_skus})

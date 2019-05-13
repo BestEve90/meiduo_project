@@ -60,8 +60,8 @@
 			<ul class="cart_goods_show">
 				<li v-for="cart in carts">
 					<img :src="cart.default_image_url" alt="商品图片">
-					<h4>cart.name</h4>
-					<div>cart.count</div>
+					<h4>[[cart.name]]</h4>
+					<div>[[cart.count]]</div>
 				</li>
 			</ul>			
 		</div>
