@@ -5,7 +5,7 @@ var vm = new Vue({
     data: {
         host: host,
         order_submitting: false, // 正在提交订单标志
-        pay_method: 2, // 支付方式,默认支付宝支付
+        pay_method: '2', // 支付方式,默认支付宝支付
         nowsite: '', // 默认地址
         payment_amount: '',
         username: ''

@@ -67,7 +67,7 @@ class OrderCommitView(LoginRequiredMixin, View):
             address = Address.objects.get(is_deleted=False, pk=address_id, user_id=user.id)
         except:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '地址无效'})
-        if pay_method not in [1, 2]:
+        if pay_method not in ['1', '2']:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '支付方式无效'})
         # 创建订单
         now = datetime.now()
@@ -86,7 +86,7 @@ class OrderCommitView(LoginRequiredMixin, View):
             total_count=total_count,
             total_amount=total_amount,
             freight=freight,
-            pay_method=pay_method,
+            pay_method=int(pay_method),
             status=status
         )
         # 查询购物车已勾选商品信息

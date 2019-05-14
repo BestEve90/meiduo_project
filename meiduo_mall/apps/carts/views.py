@@ -111,7 +111,7 @@ class CartsView(View):
         if count <= 0:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '商品数量不能为零或负数'})
         if count > sku.stock:
-            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '商品数量超过上限'})
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '库存不足'})
         if not isinstance(selected, bool):
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '选中状态无效'})
         # 处理
@@ -199,15 +199,16 @@ class CartsSelectionView(View):
 class CartsSimpleView(View):
     def get(self, request):
         user = request.user
-        cart_dict = {}
+        cart_dict={}
         if user.is_authenticated:
             redis_conn = get_redis_connection('carts')
             cart_dict = redis_conn.hgetall('carts%d' % user.id)
             cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
         else:
             cart_str = request.COOKIES.get('cart')
-            cart_dict = pickle_json.loads(cart_str)
-            cart_dict = {sku_id: cart['count'] for sku_id, cart in cart_dict.items()}
+            if cart_str is not None:
+                cart_dict = pickle_json.loads(cart_str)
+                cart_dict = {sku_id: cart['count'] for sku_id, cart in cart_dict.items()}
         cart_skus = []
         for sku_id, count in cart_dict.items():
             sku = SKU.objects.get(pk=sku_id)

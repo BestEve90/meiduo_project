@@ -9,7 +9,6 @@ def cart_merge(request, response):
     if cart_str is not None:
         cookie_carts = pickle_json.loads(cart_str)
         redis_conn = get_redis_connection('carts')
-        set_sku_ids = redis_conn.smembers('selected%d' % user_id)
         redis_pl = redis_conn.pipeline()
         # 以cookie为准
         for sku_id, cart in cookie_carts.items():
@@ -19,7 +18,7 @@ def cart_merge(request, response):
             redis_pl.hset('carts%d' % user_id, sku_id, count)
             # 合并selected
             if selected:
-                redis_pl.sadd('selected%d' % user_id, sku_id, count)
+                redis_pl.sadd('selected%d' % user_id, sku_id)
             else:
                 redis_pl.srem('selected%d' % user_id, sku_id)
         redis_pl.execute()
