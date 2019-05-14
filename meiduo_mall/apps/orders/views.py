@@ -1,9 +1,15 @@
+import json
+from datetime import datetime
+
+from meiduo_mall.utils.response_code import RETCODE
+from django import http
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import View
 from users.models import Address
 from django_redis import get_redis_connection
 from goods.models import SKU
+from .models import OrderInfo, OrderGoods
 
 
 class PlaceOrderView(LoginRequiredMixin, View):
@@ -48,3 +54,82 @@ class PlaceOrderView(LoginRequiredMixin, View):
             'total_pay': total_pay
         }
         return render(request, 'place_order.html', context)
+
+
+class OrderCommitView(LoginRequiredMixin, View):
+    def post(self, request):
+        user = request.user
+        address_id = json.loads(request.body.decode()).get('address_id')
+        pay_method = json.loads(request.body.decode()).get('pay_method')
+        if not all([address_id, pay_method]):
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '参数不完整'})
+        try:
+            address = Address.objects.get(is_deleted=False, pk=address_id, user_id=user.id)
+        except:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '地址无效'})
+        if pay_method not in [1, 2]:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '支付方式无效'})
+        # 创建订单
+        now = datetime.now()
+        order_id = '%s%09d' % (now.strftime('%Y%m%d%H%M%S'), user.id)
+        total_count = 0
+        total_amount = 0
+        freight = 10
+        if pay_method == '1':
+            status = 2
+        else:
+            status = 1
+        order = OrderInfo.objects.create(
+            order_id=order_id,
+            user_id=user.id,
+            address_id=address_id,
+            total_count=total_count,
+            total_amount=total_amount,
+            freight=freight,
+            pay_method=pay_method,
+            status=status
+        )
+        # 查询购物车已勾选商品信息
+        redis_conn = get_redis_connection('carts')
+        cart_dict = redis_conn.hgetall('carts%d' % user.id)
+        cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
+        cart_selected = redis_conn.smembers('selected%d' % user.id)
+        cart_selected = [int(sku_id) for sku_id in cart_selected]
+        # skus=SKU.objects.filter(pk__in=cart_selected,is_launched=True)
+        # for sku in skus:
+        #     count = cart_dict[sku.id]
+        #     sku = SKU.objects.get(pk=sku_id)
+        #     if count > sku.stock:
+        #         http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '库存不足'})
+        #     OrderGoods.objects.create(
+        #         order_id=order_id,
+        #         sku_id=sku.id,
+        #         count=count,
+        #         price=sku.price
+        #     )
+        for sku_id in cart_selected:
+            count = cart_dict[sku_id]
+            sku = SKU.objects.get(pk=sku_id)
+            if count > sku.stock:
+                http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '库存不足'})
+            # 创建订单商品
+            OrderGoods.objects.create(
+                order_id=order_id,
+                sku_id=sku_id,
+                count=count,
+                price=sku.price
+            )
+            # 修改库存和销量
+            sku.stock -= count
+            sku.sales += count
+            sku.save()
+            # 修改订单总金额和订单总数
+            total_count += count
+            total_amount += sku.price * count
+        order.total_count = total_count
+        order.total_amount = total_amount
+        order.save()
+        # 删除购物车中选中商品
+        redis_conn.hdel('carts%d' % user.id, *cart_selected)
+        redis_conn.delete('selected%d' % user.id)
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '', 'order_id': order_id})

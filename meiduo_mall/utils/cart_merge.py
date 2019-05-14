@@ -18,9 +18,9 @@ def cart_merge(request, response):
             # 合并count
             redis_pl.hset('carts%d' % user_id, sku_id, count)
             # 合并selected
-            if (sku_id not in set_sku_ids) and selected:
+            if selected:
                 redis_pl.sadd('selected%d' % user_id, sku_id, count)
-            if (sku_id in set_sku_ids) and (not selected):
+            else:
                 redis_pl.srem('selected%d' % user_id, sku_id)
         redis_pl.execute()
     response.delete_cookie('cart')
