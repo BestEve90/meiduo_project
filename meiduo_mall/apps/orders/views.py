@@ -139,3 +139,23 @@ class OrderCommitView(LoginRequiredMixin, View):
         redis_conn.hdel('carts%d' % user.id, *cart_selected)
         redis_conn.delete('selected%d' % user.id)
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '', 'order_id': order_id})
+
+
+class OrderSuccessView(LoginRequiredMixin, View):
+    def get(self, request):
+        payment_amount = request.GET.get('payment_amount')
+        order_id = request.GET.get('order_id')
+        pay_method = request.GET.get('pay_method')
+        if not all([payment_amount, order_id, pay_method]):
+            return render(request, '404.html')
+        context = {
+            'total_pay': payment_amount,
+            'order_id': order_id,
+            'pay_method': pay_method
+        }
+        return render(request, 'order_success.html', context)
+
+
+class OrderDisplayView(LoginRequiredMixin, View):
+    def get(self, request):
+        pass
