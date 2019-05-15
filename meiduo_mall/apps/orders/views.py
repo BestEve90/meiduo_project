@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
-
+import time
+from django.db import transaction
 from meiduo_mall.utils.response_code import RETCODE
 from django import http
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -69,66 +70,67 @@ class OrderCommitView(LoginRequiredMixin, View):
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '地址无效'})
         if pay_method not in ['1', '2']:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '支付方式无效'})
-        # 创建订单
-        now = datetime.now()
-        order_id = '%s%09d' % (now.strftime('%Y%m%d%H%M%S'), user.id)
-        total_count = 0
-        total_amount = 0
-        freight = 10
-        if pay_method == '1':
-            status = 2
-        else:
-            status = 1
-        order = OrderInfo.objects.create(
-            order_id=order_id,
-            user_id=user.id,
-            address_id=address_id,
-            total_count=total_count,
-            total_amount=total_amount,
-            freight=freight,
-            pay_method=int(pay_method),
-            status=status
-        )
-        # 查询购物车已勾选商品信息
-        redis_conn = get_redis_connection('carts')
-        cart_dict = redis_conn.hgetall('carts%d' % user.id)
-        cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
-        cart_selected = redis_conn.smembers('selected%d' % user.id)
-        cart_selected = [int(sku_id) for sku_id in cart_selected]
-        # skus=SKU.objects.filter(pk__in=cart_selected,is_launched=True)
-        # for sku in skus:
-        #     count = cart_dict[sku.id]
-        #     sku = SKU.objects.get(pk=sku_id)
-        #     if count > sku.stock:
-        #         http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '库存不足'})
-        #     OrderGoods.objects.create(
-        #         order_id=order_id,
-        #         sku_id=sku.id,
-        #         count=count,
-        #         price=sku.price
-        #     )
-        for sku_id in cart_selected:
-            count = cart_dict[sku_id]
-            sku = SKU.objects.get(pk=sku_id)
-            if count > sku.stock:
-                http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '库存不足'})
-            # 创建订单商品
-            OrderGoods.objects.create(
-                order_id=order_id,
-                sku_id=sku_id,
-                count=count,
-                price=sku.price
-            )
-            # 修改库存和销量
-            sku.stock -= count
-            sku.sales += count
-            sku.save()
-            # 修改订单总金额和订单总数
-            total_count += count
-            total_amount += sku.price * count
-        order.total_count = total_count
-        order.total_amount = total_amount
-        order.save()
+        with transaction.atomic():
+            sid = transaction.savepoint()
+            # 创建订单
+            now = datetime.now()
+            order_id = '%s%09d' % (now.strftime('%Y%m%d%H%M%S'), user.id)
+            total_count = 0
+            total_amount = 0
+            freight = 10
+            if pay_method == '1':
+                status = 2
+            else:
+                status = 1
+            try:
+                order = OrderInfo.objects.create(
+                    order_id=order_id,
+                    user_id=user.id,
+                    address_id=address_id,
+                    total_count=total_count,
+                    total_amount=total_amount,
+                    freight=freight,
+                    pay_method=int(pay_method),
+                    status=status
+                )
+                # 查询购物车已勾选商品信息
+                redis_conn = get_redis_connection('carts')
+                cart_dict = redis_conn.hgetall('carts%d' % user.id)
+                cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
+                cart_selected = redis_conn.smembers('selected%d' % user.id)
+                cart_selected = [int(sku_id) for sku_id in cart_selected]
+                if not cart_selected:
+                    transaction.savepoint_rollback(sid)
+                    return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单列表为空'})
+                for sku_id in cart_selected:
+                    count = cart_dict[sku_id]
+                    sku = SKU.objects.get(pk=sku_id)
+                    if count > sku.stock:
+                        transaction.savepoint_rollback(sid)
+                        return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '库存不足'})
+                    time.sleep(5)
+                    # 修改库存和销量
+                    sku.stock -= count
+                    sku.sales += count
+                    sku.save()
+                    # 创建订单商品
+                    OrderGoods.objects.create(
+                        order_id=order_id,
+                        sku_id=sku_id,
+                        count=count,
+                        price=sku.price
+                    )
+                    # 修改订单总金额和订单总数
+                    total_count += count
+                    total_amount += sku.price * count
+                order.total_count = total_count
+                order.total_amount = total_amount
+                order.save()
+            except:
+                transaction.savepoint_rollback(sid)
+                return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单提交失败'})
+            transaction.savepoint_commit(sid)
+
         # 删除购物车中选中商品
         redis_conn.hdel('carts%d' % user.id, *cart_selected)
         redis_conn.delete('selected%d' % user.id)

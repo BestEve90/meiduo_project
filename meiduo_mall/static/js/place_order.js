@@ -29,7 +29,7 @@ var vm = new Vue({
                 return;
             }
             if (this.order_submitting == false) {
-                this.order_submitting = true;
+
                 var url = this.host + '/orders/commit/';
                 axios.post(url, {
                     address_id: this.nowsite,
@@ -42,6 +42,7 @@ var vm = new Vue({
                 })
                     .then(response => {
                         if (response.data.code == '0') {
+                            this.order_submitting = true;
                             location.href = '/orders/success/?order_id=' + response.data.order_id
                                 + '&payment_amount=' + this.payment_amount
                                 + '&pay_method=' + this.pay_method;
