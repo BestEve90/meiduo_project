@@ -110,9 +110,13 @@ class OrderCommitView(LoginRequiredMixin, View):
                         return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '库存不足'})
                     time.sleep(5)
                     # 修改库存和销量
-                    sku.stock -= count
-                    sku.sales += count
-                    sku.save()
+                    old_stock = sku.stock
+                    new_stock = sku.stock - count
+                    new_sales = sku.sales + count
+                    result = SKU.objects.filter(pk=sku_id, stock=old_stock).update(stock=new_stock, sales=new_sales)
+                    if result == 0:
+                        transaction.savepoint_rollback(sid)
+                        return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '服务器忙'})
                     # 创建订单商品
                     OrderGoods.objects.create(
                         order_id=order_id,
