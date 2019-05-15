@@ -4,9 +4,10 @@ var vm = new Vue({
     delimiters: ['[[', ']]'],
     data: {
         host: host,
+        username:''
     },
     mounted(){
-
+        this.username = getCookie('username')
     },
     methods: {
         oper_btn_click(order_id, status){

@@ -157,5 +157,51 @@ class OrderSuccessView(LoginRequiredMixin, View):
 
 
 class OrderDisplayView(LoginRequiredMixin, View):
-    def get(self, request):
-        pass
+    def get(self, request, page_num):
+        user = request.user
+        orders = user.orderinfo_set.all()
+        '''
+        order_list=[{
+            'creat_time':
+            'order_id':
+            'sku_list':[{
+                'default_image_url':
+                'name':
+                'price':
+                'count':
+                'total_amount'
+                },
+            ]
+            'total_pay':
+            'freight':
+            'status':
+            },
+
+        ]
+        '''
+        order_list = []
+        for order in orders:
+            sku_list = []
+            order_list.append({
+                'creat_time': order.update_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'order_id': order.order_id,
+                'sku_list': sku_list,
+                'total_pay': order.total_amount,
+                'freight': order.freight,
+                'status': order.status,
+            })
+            order_goods = order.skus.all().order_by('-update_time')
+            for order_good in order_goods:
+                sku = order_good.sku
+                sku_list.append({
+                    'default_image_url': sku.default_image.url,
+                    'name': sku.name,
+                    'price': order_good.price,
+                    'count': order_good.count,
+                    'total_amount': order_good.price * order_good.count
+                })
+
+        context = {
+            'order_list': order_list,
+        }
+        return render(request, 'user_center_order.html', context)
