@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="">
+    <list id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="" />
+    <list id="06aa1e85-ce35-4a0d-8097-99cea8a50501" name="订单成功提示页面1" comment="订单成功提示页面1" />
+    <list default="true" id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/orders/views.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/orders/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/order_success.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/order_success.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html" afterPath="$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html" />
     </list>
-    <list id="06aa1e85-ce35-4a0d-8097-99cea8a50501" name="订单成功提示页面1" comment="订单成功提示页面1" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,14 +45,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.4627868">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/orders/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="467">
-                  <caret line="208" column="37" lean-forward="false" selection-start-line="208" selection-start-column="37" selection-end-line="208" selection-end-column="37" />
+                <state relative-caret-position="437">
+                  <caret line="165" column="39" lean-forward="false" selection-start-line="165" selection-start-column="39" selection-end-line="165" selection-end-column="39" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                     <element signature="e#536#2228#0" expanded="false" />
@@ -69,7 +70,6 @@
                     <element signature="e#5061#5191#0" expanded="false" />
                     <element signature="e#5742#5866#0" expanded="false" />
                     <element signature="e#6193#6684#0" expanded="false" />
-                    <element signature="e#6974#7358#1" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -197,8 +197,8 @@
           <file leaf-file-name="user_center_order.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="140" column="35" lean-forward="false" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="35" />
+                <state relative-caret-position="265">
+                  <caret line="88" column="61" lean-forward="false" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
@@ -290,8 +290,8 @@
         <option value="$PROJECT_DIR$/meiduo_mall/static/js/order_success.js" />
         <option value="$PROJECT_DIR$/meiduo_mall/static/js/user_center_order.js" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/orders/urls.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html" />
         <option value="$PROJECT_DIR$/meiduo_mall/templates/order_success.html" />
+        <option value="$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/orders/views.py" />
       </list>
     </option>
@@ -820,24 +820,11 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="" />
       <changelist id="06aa1e85-ce35-4a0d-8097-99cea8a50501" name="订单成功提示页面1" comment="" />
+      <changelist id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="" />
       <created>1556369088475</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556369088475</updated>
-    </task>
-    <task id="LOCAL-00003" summary="QQ绑定修改">
-      <created>1556457307675</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1556457307675</updated>
-    </task>
-    <task id="LOCAL-00004" summary="发送及验证邮箱">
-      <created>1556511155815</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1556511155815</updated>
     </task>
     <task id="LOCAL-00005" summary="新建areas应用">
       <created>1556528077081</created>
@@ -1168,14 +1155,28 @@
       <option name="project" value="LOCAL" />
       <updated>1557930400963</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="我的订单-分页">
+      <created>1557967725900</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1557967725901</updated>
+    </task>
+    <task id="LOCAL-00053" summary="我的订单-另一种传参方式">
+      <created>1557968309996</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1557968309996</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1851" height="903" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29546726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29546726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28987518" sideWeight="0.5078788" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72188026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1220,8 +1221,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="自定义图片存储url属性" />
-    <MESSAGE value="首页jinja2广告数据渲染修改" />
     <MESSAGE value="商品列表页面包屑\分页\排序\热销" />
     <MESSAGE value="搜索结果展示" />
     <MESSAGE value="商品规格选项展示" />
@@ -1245,7 +1244,9 @@
     <MESSAGE value="订单成功提示页面1" />
     <MESSAGE value="订单成功提示页面" />
     <MESSAGE value="我的订单" />
-    <option name="LAST_COMMIT_MESSAGE" value="我的订单" />
+    <MESSAGE value="我的订单-分页" />
+    <MESSAGE value="我的订单-另一种传参方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="我的订单-另一种传参方式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1618,14 +1619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="75" column="53" lean-forward="false" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/carts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1698,10 +1691,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/templates/user_center_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="75" column="53" lean-forward="false" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/orders/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="208" column="37" lean-forward="false" selection-start-line="208" selection-start-column="37" selection-end-line="208" selection-end-column="37" />
+        <state relative-caret-position="437">
+          <caret line="165" column="39" lean-forward="false" selection-start-line="165" selection-start-column="39" selection-end-line="165" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#536#2228#0" expanded="false" />
@@ -1719,7 +1720,6 @@
             <element signature="e#5061#5191#0" expanded="false" />
             <element signature="e#5742#5866#0" expanded="false" />
             <element signature="e#6193#6684#0" expanded="false" />
-            <element signature="e#6974#7358#1" expanded="false" />
           </folding>
         </state>
       </provider>

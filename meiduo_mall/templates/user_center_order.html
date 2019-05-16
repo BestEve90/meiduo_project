@@ -68,25 +68,25 @@
         </div>
         <div class="right_content clearfix">
             <h3 class="common_title2">全部订单</h3>
-            {% for order in order_list %}
+            {% for order in page %}
                 <ul class="order_list_th w978 clearfix">
-                    <li class="col01">{{ order.creat_time }}</li>
+                    <li class="col01">{{ order.update_time.strftime('%Y-%m-%d %H:%M:%S') }}</li>
                     <li class="col02">订单号：{{ order.order_id }}</li>
                 </ul>
                 <table class="order_list_table w980">
                     <tbody>
                     <tr>
                         <td width="55%">
-                            {% for sku in order.sku_list %}
+                            {% for order_good in order.skus.all().order_by('-update_time') %}
                                 <ul class="order_goods_list clearfix">
-                                    <li class="col01"><img src="{{ sku.default_image_url }}"></li>
-                                    <li class="col02"><span>{{ sku.name }}</span><em>{{ sku.price }}元</em></li>
-                                    <li class="col03">{{ sku.count }}</li>
-                                    <li class="col04">{{ sku.total_amount }}</li>
+                                    <li class="col01"><img src="{{ order_good.sku.default_image.url }}"></li>
+                                    <li class="col02"><span>{{ order_good.sku.name }}</span><em>{{ order_good.price }}元</em></li>
+                                    <li class="col03">{{ order_good.count }}</li>
+                                    <li class="col04">{{ order_good.price * order_good.count }}</li>
                                 </ul>
                             {% endfor %}
                         </td>
-                        <td width="15%">{{ order.total_pay }}元<br>含运费：{{ order.freight }}元</td>
+                        <td width="15%">{{ order.total_amount }}元<br>含运费：{{ order.freight }}元</td>
                         {% if order.status==1 %}
                             <td width="15%">待支付</td>
                             <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">去支付</a></td>
