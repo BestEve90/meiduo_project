@@ -119,6 +119,7 @@ class OrderCommitView(LoginRequiredMixin, View):
                         transaction.savepoint_rollback(sid)
                         return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '服务器忙'})
                     # 创建订单商品
+                    print(new_sales)
                     OrderGoods.objects.create(
                         order_id=order_id,
                         sku_id=sku_id,
