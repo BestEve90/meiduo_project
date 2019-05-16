@@ -71,11 +71,20 @@ class OrderCommitView(LoginRequiredMixin, View):
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '地址无效'})
         if pay_method not in ['1', '2']:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '支付方式无效'})
+        # 查询购物车已勾选商品信息
+        redis_conn = get_redis_connection('carts')
+        cart_dict = redis_conn.hgetall('carts%d' % user.id)
+        cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
+        cart_selected = redis_conn.smembers('selected%d' % user.id)
+        cart_selected = [int(sku_id) for sku_id in cart_selected]
+        if not cart_selected:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单列表为空'})
+        skus=SKU.objects.filter(pk__in=cart_selected).all()
         with transaction.atomic():
             sid = transaction.savepoint()
             # 创建订单
             now = datetime.now()
-            order_id = '%s%09d' % (now.strftime('%Y%m%d%H%M%S'), user.id)
+            order_id = '%s%09d' % (now.strftime('%Y%m%d%H%M%S%f'), user.id)
             total_count = 0
             total_amount = 0
             freight = 10
@@ -94,18 +103,8 @@ class OrderCommitView(LoginRequiredMixin, View):
                     pay_method=int(pay_method),
                     status=status
                 )
-                # 查询购物车已勾选商品信息
-                redis_conn = get_redis_connection('carts')
-                cart_dict = redis_conn.hgetall('carts%d' % user.id)
-                cart_dict = {int(sku_id): int(count) for sku_id, count in cart_dict.items()}
-                cart_selected = redis_conn.smembers('selected%d' % user.id)
-                cart_selected = [int(sku_id) for sku_id in cart_selected]
-                if not cart_selected:
-                    transaction.savepoint_rollback(sid)
-                    return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单列表为空'})
-                for sku_id in cart_selected:
-                    count = cart_dict[sku_id]
-                    sku = SKU.objects.get(pk=sku_id)
+                for sku in skus:
+                    count = cart_dict[sku.id]
                     if count > sku.stock:
                         transaction.savepoint_rollback(sid)
                         return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '库存不足'})
@@ -114,15 +113,15 @@ class OrderCommitView(LoginRequiredMixin, View):
                     old_stock = sku.stock
                     new_stock = sku.stock - count
                     new_sales = sku.sales + count
-                    result = SKU.objects.filter(pk=sku_id, stock=old_stock).update(stock=new_stock, sales=new_sales)
+                    result = SKU.objects.filter(pk=sku.id, stock=old_stock).update(stock=new_stock, sales=new_sales)
                     if result == 0:
                         transaction.savepoint_rollback(sid)
                         return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '服务器忙'})
                     # 创建订单商品
-                    print(new_sales)
+                    # print(new_sales)
                     OrderGoods.objects.create(
                         order_id=order_id,
-                        sku_id=sku_id,
+                        sku_id=sku.id,
                         count=count,
                         price=sku.price
                     )
