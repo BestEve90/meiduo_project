@@ -11,6 +11,7 @@ from users.models import Address
 from django_redis import get_redis_connection
 from goods.models import SKU
 from .models import OrderInfo, OrderGoods
+from django.core.paginator import Paginator
 
 
 class PlaceOrderView(LoginRequiredMixin, View):
@@ -160,6 +161,9 @@ class OrderDisplayView(LoginRequiredMixin, View):
     def get(self, request, page_num):
         user = request.user
         orders = user.orderinfo_set.all()
+        paginator = Paginator(orders, 2)
+        page = paginator.page(page_num)
+        num_pages = paginator.num_pages
         '''
         order_list=[{
             'creat_time':
@@ -180,7 +184,7 @@ class OrderDisplayView(LoginRequiredMixin, View):
         ]
         '''
         order_list = []
-        for order in orders:
+        for order in page:
             sku_list = []
             order_list.append({
                 'creat_time': order.update_time.strftime('%Y-%m-%d %H:%M:%S'),
@@ -203,5 +207,7 @@ class OrderDisplayView(LoginRequiredMixin, View):
 
         context = {
             'order_list': order_list,
+            'page_num': page_num,
+            'num_pages': num_pages
         }
         return render(request, 'user_center_order.html', context)
