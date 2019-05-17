@@ -89,7 +89,7 @@
                         <td width="15%">{{ order.total_amount }}元<br>含运费：{{ order.freight }}元</td>
                         {% if order.status==1 %}
                             <td width="15%">待支付</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">去支付</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">去支付</a></td>
                         {% elif order.status==2 %}
                             <td width="15%">待发货</td>
                             <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">提醒发货</a></td>

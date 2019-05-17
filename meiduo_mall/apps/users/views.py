@@ -122,6 +122,7 @@ class LoginView(View):
             request.session.set_expiry(0)
             response.set_cookie('username', username)
         else:
+            request.session.set_expiry(None)
             response.set_cookie(
                 'username',
                 username,
