@@ -203,3 +203,29 @@ class OrderCommentView(LoginRequiredMixin, View):
         ]
         '''
         return render(request, 'goods_judge.html', {'skus': skus})
+
+    def post(self, request):
+        param_dict = json.loads(request.body.decode())
+        order_id = param_dict.get('order_id')
+        sku_id = param_dict.get('sku_id')
+        comment = param_dict.get('comment')
+        score = param_dict.get('score')
+        is_anonymous = param_dict.get('is_anonymous')
+        if not all([param_dict, order_id, sku_id, comment, score]):
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '参数不完整'})
+        try:
+            order_good = OrderGoods.objects.get(order_id=order_id, sku_id=sku_id)
+        except:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单编号/商品编号无效'})
+        # 保存订单商品评价信息
+        order_good.comment = comment
+        order_good.score = score
+        order_good.is_anonymous = is_anonymous
+        order_good.is_commented = True
+        order_good.save()
+        # 修改订单状态
+        order = order_good.order
+        if order.skus.filter(is_commented=False).count() <= 0:
+            order.status = 5
+            order.save()
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': ''})
