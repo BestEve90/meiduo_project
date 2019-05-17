@@ -92,19 +92,19 @@
                             <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">去支付</a></td>
                         {% elif order.status==2 %}
                             <td width="15%">待发货</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">提醒发货</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">提醒发货</a></td>
                         {% elif order.status==3 %}
                             <td width="15%">待收货</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">确认收货</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">确认收货</a></td>
                         {% elif order.status==4 %}
                             <td width="15%">待评价</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">去评价</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">去评价</a></td>
                         {% elif order.status==5 %}
                             <td width="15%">已完成</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">再次购买</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">再次购买</a></td>
                         {% elif order.status==6 %}
                             <td width="15%">已取消</td>
-                            <td width="15%"><a href="../static/goods_judge.html" class="oper_btn">重新购买</a></td>
+                            <td width="15%"><a href="javascript:;" class="oper_btn" @click="oper_btn_click('{{ order.order_id }}', '{{ order.status }}')">重新购买</a></td>
                         {% endif %}
                     </tr>
                     </tbody>

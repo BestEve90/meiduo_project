@@ -79,7 +79,7 @@ class OrderCommitView(LoginRequiredMixin, View):
         cart_selected = [int(sku_id) for sku_id in cart_selected]
         if not cart_selected:
             return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单列表为空'})
-        skus=SKU.objects.filter(pk__in=cart_selected).all()
+        skus = SKU.objects.filter(pk__in=cart_selected).all()
         with transaction.atomic():
             sid = transaction.savepoint()
             # 创建订单
@@ -160,7 +160,7 @@ class OrderSuccessView(LoginRequiredMixin, View):
 class OrderDisplayView(LoginRequiredMixin, View):
     def get(self, request, page_num):
         user = request.user
-        orders = user.orderinfo_set.all()
+        orders = user.orderinfo_set.all().order_by('-update_time')
         paginator = Paginator(orders, 2)
         page = paginator.page(page_num)
         num_pages = paginator.num_pages
@@ -170,3 +170,36 @@ class OrderDisplayView(LoginRequiredMixin, View):
             'num_pages': num_pages
         }
         return render(request, 'user_center_order.html', context)
+
+
+class OrderCommentView(LoginRequiredMixin, View):
+    def get(self, request):
+        order_id = request.GET.get('order_id')
+        try:
+            order = OrderInfo.objects.get(pk=order_id)
+        except:
+            return http.JsonResponse({'code': RETCODE.PARAMERR, 'errmsg': '订单编号无效'})
+        order_goods = order.skus.filter(is_commented=False)
+        skus = []
+        for good in order_goods:
+            skus.append({
+                'default_image_url': good.sku.default_image.url,
+                'name': good.sku.name,
+                'price': str(good.price),
+                'score': good.score,
+                'order_id': order_id,
+                'sku_id': good.sku_id
+            })
+        '''
+        skus=[{
+            'default_image_url'
+            'name':
+            'price':
+            'score':
+            'order_id':
+            'sku_id':
+
+        }
+        ]
+        '''
+        return render(request, 'goods_judge.html', {'skus': skus})
