@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'd@nbx(@)6c&nmeiyze%z1x9w=@2i)1^)!16_@(24^r9l%c%ky&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.meiduo.site'
