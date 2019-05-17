@@ -11,7 +11,7 @@ from meiduo_mall.utils.category import get_categories
 from .models import GoodsCategory, SKU, SKUSpecification, GoodsVisitCount
 from meiduo_mall.utils.breadcrumb import get_breadcrumb
 from copy import deepcopy
-
+from celery_tasks.detail.tasks import generate_static_detail_html
 
 class ListView(View):
     def get(self, request, category_id, page):
@@ -66,6 +66,7 @@ class HotView(View):
 
 class DetailView(View):
     def get(self, request, sku_id):
+        generate_static_detail_html.delay(sku_id)
         categories = get_categories()
         # 面包屑导航
         sku = SKU.objects.get(id=sku_id)
