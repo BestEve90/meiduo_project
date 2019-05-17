@@ -253,5 +253,5 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 # 支付宝对接
 ALIPAY_APP_ID = '2016092900623100'
 ALIPAY_DEBUG = True
-ALIPAY_RETURN_URL = 'http://www.meiduo.com/payment/status/'
+ALIPAY_RETURN_URL = 'http://www.meiduo.site:8000/payment/status/'
 ALIPAY_GATEWAY = 'https://openapi.alipaydev.com/gateway.do?'

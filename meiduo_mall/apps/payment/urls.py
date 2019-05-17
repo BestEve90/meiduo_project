@@ -2,5 +2,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^payment/(?P<order_id>\d+)/$',views.AlipayUrlView.as_view())
+    url(r'^payment/(?P<order_id>\d+)/$', views.AlipayUrlView.as_view()),
+    url(r'^payment/status/$', views.AlipaySuccessView.as_view())
 ]
