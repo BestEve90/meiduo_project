@@ -232,7 +232,7 @@ AUTH_USER_MODEL = 'users.User'
 # QQ授权信息
 QQ_CLIENT_ID = '101518219'
 QQ_CLIENT_SECRET = '418d84ebdc7241efb79536886ae95224'
-QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth_callback'
+QQ_REDIRECT_URI = 'http://www.meiduo.site/oauth_callback'
 
 LOGIN_URL = '/login/'
 
@@ -245,7 +245,7 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = 'hxheve@163.com'
 EMAIL_HOST_PASSWORD = 'hxhdj25185661'
 EMAIL_FROM = '美多商城<hxheve@163.com>'
-EMAIL_ACTIVE_URL = 'http://www.meiduo.site:8000/emails/verification/'
+EMAIL_ACTIVE_URL = 'http://www.meiduo.site/emails/verification/'
 
 # fastdfs图片链接前缀
 FDFS_URL = 'http://image.meiduo.site:8888/'
@@ -265,7 +265,7 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 # 支付宝对接
 ALIPAY_APP_ID = '2016092900623100'
 ALIPAY_DEBUG = True
-ALIPAY_RETURN_URL = 'http://www.meiduo.site:8000/payment/status/'
+ALIPAY_RETURN_URL = 'http://www.meiduo.site/payment/status/'
 ALIPAY_GATEWAY = 'https://openapi.alipaydev.com/gateway.do?'
 
 # 定时任务
