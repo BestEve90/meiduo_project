@@ -90,6 +90,6 @@ def generate_static_detail_html(sku_id):
     }
     response = render(None, 'detail.html', context)
     html_str = response.content.decode()
-    path = os.path.join(settings.BASE_DIR, 'static/details/%d.html' % sku.id)
+    path = os.path.join(settings.BASE_DIR, 'static/detail/%d.html' % sku.id)
     with open(path, 'w') as f:
         f.write(html_str)

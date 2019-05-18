@@ -102,4 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-.idea
+.idea/
+*.pyc
+*.log
+detail/
+mysql_slave/
+static/
