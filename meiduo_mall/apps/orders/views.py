@@ -229,3 +229,16 @@ class OrderCommentView(LoginRequiredMixin, View):
             order.status = 5
             order.save()
         return http.JsonResponse({'code': RETCODE.OK, 'errmsg': ''})
+
+
+class CommentListView(View):
+    def get(self, request, sku_id):
+        order_goods = OrderGoods.objects.filter(sku_id=sku_id, is_commented=True)
+        comment_list = []
+        for good in order_goods:
+            comment_list.append({
+                'user_name': '*****' if good.is_anonymous else good.order.user.username,
+                'score': good.score,
+                'msg': good.comment
+            })
+        return http.JsonResponse({'code': RETCODE.OK, 'errmsg': '', 'goods_comment_list': comment_list})

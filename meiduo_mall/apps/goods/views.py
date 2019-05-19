@@ -66,7 +66,6 @@ class HotView(View):
 
 class DetailView(View):
     def get(self, request, sku_id):
-        generate_static_detail_html.delay(sku_id)
         categories = get_categories()
         # 面包屑导航
         sku = SKU.objects.get(id=sku_id)
