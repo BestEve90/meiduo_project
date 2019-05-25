@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', include('meiduo_admin.urls', namespace='meiduo_admin')),
+    url(r'^meiduo_admin/', include('meiduo_admin.urls', namespace='meiduo_admin')),
     url(r'^', include('users.urls', namespace='users')),
     url(r'^', include('identify.urls', namespace='identify')),
     url(r'^', include('oauth.urls', namespace='oauth')),
