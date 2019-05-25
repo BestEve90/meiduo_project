@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'carts.apps.CartsConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'meiduo_admin.apps.MeiduoAdminConfig',
 
     'haystack',
     'django_crontab',  # 定时任务
