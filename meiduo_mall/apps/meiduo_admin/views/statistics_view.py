@@ -22,3 +22,21 @@ class DailyUerIncrementView(APIView):
         now_date = date.today()
         count = User.objects.filter(date_joined__gte=date.today()).count()
         return Response({'count': count, 'date': now_date})
+
+
+class DailyActiveUserView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get(self, request):
+        now_date = date.today()
+        count = User.objects.filter(last_login__gte=date.today()).count()
+        return Response({'count': count, 'date': now_date})
+
+
+class DailyOrdersUserView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get(self, request):
+        now_date = date.today()
+        count = User.objects.filter(orderinfo__create_time__gte=date.today()).count()
+        return Response({'count': count, 'date': now_date})

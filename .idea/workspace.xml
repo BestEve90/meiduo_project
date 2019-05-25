@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="" />
     <list id="06aa1e85-ce35-4a0d-8097-99cea8a50501" name="订单成功提示页面1" comment="订单成功提示页面1" />
-    <list default="true" id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="用户总数统计">
+    <list default="true" id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="日增用户统计">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.rdb" afterPath="$PROJECT_DIR$/dump.rdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/statistics_view.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/statistics_view.py" />
     </list>
@@ -48,11 +47,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="statistics_view.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="statistics_view.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/statistics_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="238">
+              <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -60,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="78" />
+            <state relative-caret-position="220">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -733,13 +732,6 @@
       <option name="presentableId" value="Default" />
       <updated>1556369088475</updated>
     </task>
-    <task id="LOCAL-00026" summary="保存浏览记录">
-      <created>1557534591882</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1557534591882</updated>
-    </task>
     <task id="LOCAL-00027" summary="获取浏览记录">
       <created>1557537254802</created>
       <option name="number" value="00027" />
@@ -1076,7 +1068,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558786588874</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="日增用户统计">
+      <created>1558787110587</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1558787110587</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1086,7 +1085,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18690543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46204188" sideWeight="0.28651372" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19749518" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19697818" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7853403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46204188" sideWeight="0.7134863" order="2" side_tool="false" content_ui="tabs" />
@@ -1131,7 +1130,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="使用乐观锁解决并发问题" />
     <MESSAGE value="订单成功提示页面1" />
     <MESSAGE value="订单成功提示页面" />
     <MESSAGE value="我的订单" />
@@ -1156,7 +1154,8 @@
     <MESSAGE value="新建meiduo_admin应用" />
     <MESSAGE value="管理员登录" />
     <MESSAGE value="用户总数统计" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户总数统计" />
+    <MESSAGE value="日增用户统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="日增用户统计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1678,22 +1677,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/statistics_view.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="220">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/statistics_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="78" />
+        <state relative-caret-position="238">
+          <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
