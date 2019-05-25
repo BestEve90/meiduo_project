@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^statistical/day_increment/$', statistics_view.DailyUerIncrementView.as_view()),
     url(r'^statistical/day_active/$', statistics_view.DailyActiveUserView.as_view()),
     url(r'^statistical/day_orders/$', statistics_view.DailyOrdersUserView.as_view()),
+    url(r'^statistical/goods_day_views/$', statistics_view.DailyCategoryVisitView.as_view()),
 ]
