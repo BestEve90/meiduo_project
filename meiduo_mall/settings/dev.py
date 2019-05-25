@@ -26,7 +26,8 @@ SECRET_KEY = 'd@nbx(@)6c&nmeiyze%z1x9w=@2i)1^)!16_@(24^r9l%c%ky&'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.meiduo.site'
+    'www.meiduo.site',
+    '127.0.0.1'
 ]
 
 # Application definition
@@ -50,7 +51,8 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',
 
     'haystack',
-    'django_crontab', # 定时任务
+    'django_crontab',  # 定时任务
+    'corsheaders',
 
 ]
 
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'meiduo_mall.urls'
@@ -271,6 +274,16 @@ ALIPAY_GATEWAY = 'https://openapi.alipaydev.com/gateway.do?'
 # 定时任务
 CRONJOBS = [
     # 每1分钟生成一次首页静态文件
-    ('*/1 * * * *', 'contents.crons.generate_static_index_html', '>> ' + os.path.join(os.path.dirname(BASE_DIR), 'logs/crontab.log'))
+    ('*/1 * * * *', 'contents.crons.generate_static_index_html',
+     '>> ' + os.path.join(os.path.dirname(BASE_DIR), 'logs/crontab.log'))
 ]
 CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
+
+# CORS
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8080',
+    'http://localhost:8080',
+    'http://www.meiduo.site:8080',
+    'http://api.meiduo.site:8000',
+)
+CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
