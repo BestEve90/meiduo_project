@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^users/$', users_view.UsersView.as_view()),
     url(r'^skus/$', goods_view.SKUView.as_view({'get': 'list'})),
     url(r'^skus/categories/$', goods_view.SKUCategoryView.as_view()),
+    url(r'^goods/simple/$', goods_view.SPUNameView.as_view()),
 ]

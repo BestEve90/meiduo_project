@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list id="3075aa82-aaa0-44e5-90de-e90d7fb158c3" name="Default" comment="" />
     <list id="06aa1e85-ce35-4a0d-8097-99cea8a50501" name="订单成功提示页面1" comment="订单成功提示页面1" />
-    <list default="true" id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="获取SKU表数据">
+    <list default="true" id="ef739140-c27c-4ce7-8b0e-e2e374789e4c" name="我的订单-另一种传参方式" comment="保存SKU表数据-获取三级分类信息">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py" afterPath="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py" />
@@ -20,7 +20,7 @@
     <SUITE FILE_PATH="coverage/meiduo_mall$signature_serializer.coverage" NAME="signature_serializer Coverage Results" MODIFIED="1556455192293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/meiduo_mall/utils" />
     <SUITE FILE_PATH="coverage/meiduo_mall$demo1.coverage" NAME="demo1 Coverage Results" MODIFIED="1557747980648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/meiduo_mall/apps/carts" />
     <SUITE FILE_PATH="coverage/meiduo_mall$generate_detail.coverage" NAME="generate_detail Coverage Results" MODIFIED="1558093449770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
-    <SUITE FILE_PATH="coverage/meiduo_mall$meiduo.coverage" NAME="meiduo Coverage Results" MODIFIED="1558834188348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/meiduo_mall$meiduo.coverage" NAME="meiduo Coverage Results" MODIFIED="1558837335149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/meiduo_mall$demo.coverage" NAME="demo Coverage Results" MODIFIED="1557112726716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/meiduo_mall/utils/fastdfs" />
     <SUITE FILE_PATH="coverage/meiduo_mall$views.coverage" NAME="meiduo Coverage Results" MODIFIED="1556459862814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goods_view.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="goods_view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/goods_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -86,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goods_serializers.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="goods_serializers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="195">
+              <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -113,8 +113,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+            <state relative-caret-position="308">
+              <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -197,8 +197,8 @@
         <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/utils/page_num.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/users_view.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py" />
-        <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py" />
         <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/goods_view.py" />
+        <option value="$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py" />
       </list>
     </option>
   </component>
@@ -217,8 +217,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="928" />
-    <option name="height" value="894" />
+    <option name="width" value="1851" />
+    <option name="height" value="903" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -775,13 +775,6 @@
       <option name="presentableId" value="Default" />
       <updated>1556369088475</updated>
     </task>
-    <task id="LOCAL-00031" summary="优化前端代码">
-      <created>1557643822883</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1557643822883</updated>
-    </task>
     <task id="LOCAL-00032" summary="未登陆用户购物车的增删改查-cookies">
       <created>1557657346048</created>
       <option name="number" value="00032" />
@@ -1118,11 +1111,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558836158177</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="保存SKU表数据-获取三级分类信息">
+      <created>1558836894010</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1558836894010</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="928" height="894" extended-state="6" />
+    <frame x="65" y="24" width="1851" height="903" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4109091" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1131,7 +1131,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42666668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.78410596" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46092716" sideWeight="0.7134863" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.460733" sideWeight="0.7134863" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24915445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48874173" sideWeight="0.49212122" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1173,7 +1173,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="我的订单-另一种传参方式" />
     <MESSAGE value="新建支付应用" />
     <MESSAGE value="防止用户连点订单编号重复+ms" />
     <MESSAGE value="获取支付宝支付链接" />
@@ -1198,7 +1197,8 @@
     <MESSAGE value="分类商品日访问量统计" />
     <MESSAGE value="获取和查询用户" />
     <MESSAGE value="获取SKU表数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="获取SKU表数据" />
+    <MESSAGE value="保存SKU表数据-获取三级分类信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="保存SKU表数据-获取三级分类信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1637,16 +1637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/3e84261/112202bf-58a9-4a60-a025-3a53f0906cd2/meiduo_mall.tb_goods_category">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1660,22 +1650,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/goods_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="528">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/goods_view.py">
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/goods_serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
