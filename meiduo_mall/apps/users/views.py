@@ -109,6 +109,7 @@ class LoginView(View):
             return http.HttpResponseBadRequest('请输入8-12位的密码')
 
         user = authenticate(
+            request,
             username=username,
             password=pwd)  # username可以是用户名或手机号
         if user is None:

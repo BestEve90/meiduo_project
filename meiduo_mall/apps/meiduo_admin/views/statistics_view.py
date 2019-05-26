@@ -41,7 +41,7 @@ class DailyOrdersUserView(APIView):
 
     def get(self, request):
         now_date = date.today()
-        count = User.objects.filter(orderinfo__create_time__gte=date.today()).count()
+        count = len(set(User.objects.filter(orderinfo__create_time__gte=date.today())))
         return Response({'count': count, 'date': now_date})
 
 
