@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^statistical/goods_day_views/$', statistics_view.DailyCategoryVisitView.as_view()),
     url(r'^users/$', users_view.UsersView.as_view()),
     url(r'^skus/$', goods_view.SKUView.as_view({'get': 'list'})),
+    url(r'^skus/categories/$', goods_view.SKUCategoryView.as_view()),
 ]

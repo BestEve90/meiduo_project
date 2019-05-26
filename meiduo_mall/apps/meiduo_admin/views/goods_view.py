@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
-from meiduo_admin.serializers.goods_serializers import SKUSerializer
+from rest_framework.generics import ListAPIView
+from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCategorySerializer
 from meiduo_admin.utils.page_num import PageNum
-from goods.models import SKU
+from goods.models import SKU, GoodsCategory
 
 
 class SKUView(ModelViewSet):
@@ -14,3 +15,8 @@ class SKUView(ModelViewSet):
             return SKU.objects.all()
         else:
             return SKU.objects.filter(name__contains=keyword)
+
+
+class SKUCategoryView(ListAPIView):
+    queryset = GoodsCategory.objects.filter(parent_id__gt=37)
+    serializer_class = GoodsCategorySerializer

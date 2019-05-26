@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from goods.models import SKU, SKUSpecification
+from goods.models import SKU, SKUSpecification, GoodsCategory
 
 
 class SKUSpecSerializer(serializers.ModelSerializer):
@@ -16,3 +16,9 @@ class SKUSerializer(serializers.ModelSerializer):
     class Meta:
         model = SKU
         exclude = ['comments', 'default_image']
+
+
+class GoodsCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GoodsCategory
+        fields = ['id', 'name']
