@@ -1,27 +1,10 @@
-from rest_framework.generics import ListAPIView
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.serializers import Serializer
+from rest_framework.generics import ListCreateAPIView
 from meiduo_admin.serializers.users_serializer import UserSerializer
-from rest_framework.response import Response
+from meiduo_admin.utils.page_num import PageNum
 from users.models import User
 
 
-class PageNum(PageNumberPagination):
-    page_size = 5
-    page_size_query_param = 'pagesize'
-    max_page_size = 10
-
-    def get_paginated_response(self, data):
-        return Response({
-            'counts': self.page.paginator.count,
-            'lists': data,
-            'page': self.page.number,
-            'pages': self.page.paginator.num_pages,
-            'pagesize': self.page_size
-        })
-
-
-class UsersView(ListAPIView):
+class UsersView(ListCreateAPIView):
     serializer_class = UserSerializer
     pagination_class = PageNum
 
