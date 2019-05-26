@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^statistical/day_increment/$', statistics_view.DailyUerIncrementView.as_view()),
     url(r'^statistical/day_active/$', statistics_view.DailyActiveUserView.as_view()),
     url(r'^statistical/day_orders/$', statistics_view.DailyOrdersUserView.as_view()),
+    url(r'^statistical/month_increment/$', statistics_view.MonthUserIncrementView.as_view()),
     url(r'^statistical/goods_day_views/$', statistics_view.DailyCategoryVisitView.as_view()),
     url(r'^users/$', users_view.UsersView.as_view()),
     url(r'^skus/$', goods_view.SKUView.as_view({'get': 'list'})),
