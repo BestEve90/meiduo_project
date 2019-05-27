@@ -1,9 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
 from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCategorySerializer, SPUSimpleSerializer, \
-    SPUSpecSerializer, SPUSerializer
+    SPUSpecSerializer, SPUSerializer, BrandSerializer
 from meiduo_admin.utils.page_num import PageNum
-from goods.models import SKU, GoodsCategory, SPU, SPUSpecification
+from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand
 
 
 class SKUView(ModelViewSet):
@@ -51,3 +51,9 @@ class SPUView(ModelViewSet):
             return SPU.objects.all()
         else:
             return SPU.objects.filter(name__contains=keyword)
+
+
+class BrandView(ListAPIView):
+    '''获取品牌信息'''
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializer
