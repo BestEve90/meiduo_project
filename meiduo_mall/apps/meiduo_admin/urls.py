@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^statistical/goods_day_views/$', statistics_view.DailyCategoryVisitView.as_view()),
     url(r'^users/$', users_view.UsersView.as_view()),
     url(r'^skus/$', goods_view.SKUView.as_view({'get': 'list', 'post': 'create'})),
+    url(r'^skus/(?P<pk>\d+)/$', goods_view.SKUView.as_view({'get': 'retrieve', 'put': 'update'})),
     url(r'^skus/categories/$', goods_view.SKUCategoryView.as_view()),
     url(r'^goods/simple/$', goods_view.SPUNameView.as_view()),
     url(r'^goods/(?P<pk>\d+)/specs/$', goods_view.SPUSpecsView.as_view()),
