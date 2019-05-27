@@ -4,6 +4,8 @@ from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCateg
     SPUSpecSerializer, SPUSerializer, BrandSerializer
 from meiduo_admin.utils.page_num import PageNum
 from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 
 class SKUView(ModelViewSet):
@@ -52,8 +54,22 @@ class SPUView(ModelViewSet):
         else:
             return SPU.objects.filter(name__contains=keyword)
 
+    def get_sub_cats(self, request, pk):
+        '''获取二级和三级分类信息'''
+        sub_cats = GoodsCategory.objects.filter(parent_id=pk)
+        ser = GoodsCategorySerializer(sub_cats, many=True)
+        return Response({'subs': ser.data})
+
 
 class BrandView(ListAPIView):
     '''获取品牌信息'''
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer
+
+
+class ChannelView(ListAPIView):
+    '''获取一级分类信息'''
+    queryset = GoodsCategory.objects.filter(parent_id__isnull=True)
+    serializer_class = GoodsCategorySerializer
+
+
