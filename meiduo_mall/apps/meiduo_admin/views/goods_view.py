@@ -73,3 +73,8 @@ class ChannelView(ListAPIView):
     serializer_class = GoodsCategorySerializer
 
 
+class GoodSpecsView(ModelViewSet):
+    '''商品规格表的增删改查'''
+    queryset = SPUSpecification.objects.all()
+    serializer_class = SPUSpecSerializer
+    pagination_class = PageNum

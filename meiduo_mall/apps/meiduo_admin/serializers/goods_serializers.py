@@ -49,8 +49,9 @@ class SpecsOptionSerializer(serializers.ModelSerializer):
 
 class SPUSpecSerializer(serializers.ModelSerializer):
     '''SPU商品规格序列化器'''
-    options = SpecsOptionSerializer(many=True)
+    options = SpecsOptionSerializer(many=True, read_only=True)
     spu = serializers.StringRelatedField()
+    spu_id = serializers.IntegerField()
 
     class Meta:
         model = SPUSpecification
