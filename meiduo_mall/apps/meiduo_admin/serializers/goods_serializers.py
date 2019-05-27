@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from goods.models import SKU, SKUSpecification, GoodsCategory, SPU, SpecificationOption, SPUSpecification, Brand
+from goods.models import SKU, SKUSpecification, GoodsCategory, SPU, SpecificationOption, SPUSpecification, Brand, \
+    SKUImage
 
 
 class SKUSpecSerializer(serializers.ModelSerializer):
@@ -93,3 +94,12 @@ class BrandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
         fields = ['id', 'name']
+
+
+class SKUImageSerializer(serializers.ModelSerializer):
+    '''SKU图片序列化器'''
+    sku = serializers.PrimaryKeyRelatedField(read_only=True)
+
+    class Meta:
+        model = SKUImage
+        fields = ['id', 'sku', 'image']

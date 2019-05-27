@@ -1,9 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
 from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCategorySerializer, SPUSimpleSerializer, \
-    SPUSpecSerializer, SPUSerializer, BrandSerializer, SpecsOptionSerializer, SpecSimpleSerializer
+    SPUSpecSerializer, SPUSerializer, BrandSerializer, SpecsOptionSerializer, SpecSimpleSerializer, SKUImageSerializer
 from meiduo_admin.utils.page_num import PageNum
-from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand, SpecificationOption
+from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand, SpecificationOption, SKUImage
 from rest_framework.response import Response
 
 
@@ -87,5 +87,13 @@ class OptionsView(ModelViewSet):
 
 
 class SpecsSimpleView(ListAPIView):
+    '''获取规格名称信息'''
     queryset = SPUSpecification.objects.all()
     serializer_class = SpecSimpleSerializer
+
+
+class SKUImagesView(ModelViewSet):
+    '''SKU图片表的增删改查'''
+    queryset = SKUImage.objects.all()
+    serializer_class = SKUImageSerializer
+    pagination_class = PageNum

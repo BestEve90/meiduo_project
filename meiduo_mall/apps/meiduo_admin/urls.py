@@ -4,10 +4,11 @@ from .views import statistics_view, users_view, goods_view
 from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
+router.register('skus/images', goods_view.SKUImagesView, base_name='sku_images')
 router.register('goods/specs', goods_view.GoodSpecsView, base_name='specs')
 router.register('skus', goods_view.SKUView, base_name='sku')
 router.register('goods', goods_view.SPUView, base_name='spu')
-router.register('specs/options', goods_view.OptionsView, base_name='spu')
+router.register('specs/options', goods_view.OptionsView, base_name='options')
 print(router.urls)
 
 urlpatterns = [
