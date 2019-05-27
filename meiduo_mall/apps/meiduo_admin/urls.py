@@ -7,6 +7,7 @@ router = SimpleRouter()
 router.register('goods/specs', goods_view.GoodSpecsView, base_name='specs')
 router.register('skus', goods_view.SKUView, base_name='sku')
 router.register('goods', goods_view.SPUView, base_name='spu')
+router.register('specs/options', goods_view.OptionsView, base_name='spu')
 print(router.urls)
 
 urlpatterns = [

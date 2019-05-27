@@ -39,7 +39,7 @@ class SPUSimpleSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
-class SpecsOptionSerializer(serializers.ModelSerializer):
+class OptionsSerializer(serializers.ModelSerializer):
     '''规格选项序列化器'''
 
     class Meta:
@@ -49,7 +49,7 @@ class SpecsOptionSerializer(serializers.ModelSerializer):
 
 class SPUSpecSerializer(serializers.ModelSerializer):
     '''SPU商品规格序列化器'''
-    options = SpecsOptionSerializer(many=True, read_only=True)
+    options = OptionsSerializer(many=True, read_only=True)
     spu = serializers.StringRelatedField()
     spu_id = serializers.IntegerField()
 
@@ -77,3 +77,12 @@ class BrandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
         fields = ['id', 'name']
+
+
+class SpecsOptionSerializer(serializers.ModelSerializer):
+    spec = serializers.StringRelatedField()
+    spec_id = serializers.IntegerField()
+
+    class Meta:
+        model = SpecificationOption
+        fields = '__all__'
