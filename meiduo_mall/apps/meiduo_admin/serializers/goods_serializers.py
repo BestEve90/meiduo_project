@@ -9,9 +9,11 @@ class SKUSpecSerializer(serializers.ModelSerializer):
 
 
 class SKUSerializer(serializers.ModelSerializer):
-    specs = SKUSpecSerializer(many=True)
-    spu = serializers.StringRelatedField()
-    category = serializers.StringRelatedField()
+    specs = SKUSpecSerializer(many=True, read_only=True)  # 必须read_only?
+    spu = serializers.StringRelatedField(read_only=True)  # 必须read_only?
+    spu_id = serializers.IntegerField()  # 必须单拎出来? 不然不存在?
+    category = serializers.StringRelatedField(read_only=True)  # 必须read_only?
+    category_id = serializers.IntegerField()  # 必须单拎出来? 不然不存在?
 
     class Meta:
         model = SKU
