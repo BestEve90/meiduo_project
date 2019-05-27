@@ -1,10 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
 from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCategorySerializer, SPUSimpleSerializer, \
-    SPUSpecSerializer, SPUSerializer, BrandSerializer, SpecsOptionSerializer
+    SPUSpecSerializer, SPUSerializer, BrandSerializer, SpecsOptionSerializer, SpecSimpleSerializer
 from meiduo_admin.utils.page_num import PageNum
 from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand, SpecificationOption
-from rest_framework.decorators import action
 from rest_framework.response import Response
 
 
@@ -85,3 +84,8 @@ class OptionsView(ModelViewSet):
     queryset = SpecificationOption.objects.all()
     serializer_class = SpecsOptionSerializer
     pagination_class = PageNum
+
+
+class SpecsSimpleView(ListAPIView):
+    queryset = SPUSpecification.objects.all()
+    serializer_class = SpecSimpleSerializer

@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^goods/brands/simple/$', goods_view.BrandView.as_view()),
     url(r'^goods/channel/categories/$', goods_view.ChannelView.as_view()),
     url(r'^goods/channel/categories/(?P<pk>\d+)/$', goods_view.SPUView.as_view({'get': 'get_sub_cats'})),
+    url(r'^goods/specs/simple/$', goods_view.SpecsSimpleView.as_view()),
     url(r'^', include(router.urls)),
 
 ]

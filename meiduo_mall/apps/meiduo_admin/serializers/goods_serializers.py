@@ -39,8 +39,18 @@ class SPUSimpleSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
+class SpecsOptionSerializer(serializers.ModelSerializer):
+    '''规格选项全序列化器'''
+    spec = serializers.StringRelatedField()
+    spec_id = serializers.IntegerField()
+
+    class Meta:
+        model = SpecificationOption
+        fields = '__all__'
+
+
 class OptionsSerializer(serializers.ModelSerializer):
-    '''规格选项序列化器'''
+    '''规格选项简单序列化器'''
 
     class Meta:
         model = SpecificationOption
@@ -56,6 +66,12 @@ class SPUSpecSerializer(serializers.ModelSerializer):
     class Meta:
         model = SPUSpecification
         fields = '__all__'
+
+
+class SpecSimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SPUSpecification
+        fields = ['id', 'name']
 
 
 class SPUSerializer(serializers.ModelSerializer):
@@ -77,12 +93,3 @@ class BrandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
         fields = ['id', 'name']
-
-
-class SpecsOptionSerializer(serializers.ModelSerializer):
-    spec = serializers.StringRelatedField()
-    spec_id = serializers.IntegerField()
-
-    class Meta:
-        model = SpecificationOption
-        fields = '__all__'
