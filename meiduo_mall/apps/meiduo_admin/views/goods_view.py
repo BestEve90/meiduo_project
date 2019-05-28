@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
+from rest_framework.views import APIView
 from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCategorySerializer, SPUSimpleSerializer, \
     SPUSpecSerializer, SPUSerializer, BrandSerializer, SpecsOptionSerializer, SpecSimpleSerializer, SKUImageSerializer
 from meiduo_admin.utils.page_num import PageNum
@@ -53,12 +54,6 @@ class SPUView(ModelViewSet):
         else:
             return SPU.objects.filter(name__contains=keyword)
 
-    def get_sub_cats(self, request, pk):
-        '''获取二级和三级分类信息'''
-        sub_cats = GoodsCategory.objects.filter(parent_id=pk)
-        ser = GoodsCategorySerializer(sub_cats, many=True)
-        return Response({'subs': ser.data})
-
 
 class BrandView(ListAPIView):
     '''获取品牌信息'''
@@ -70,6 +65,14 @@ class ChannelView(ListAPIView):
     '''获取一级分类信息'''
     queryset = GoodsCategory.objects.filter(parent_id__isnull=True)
     serializer_class = GoodsCategorySerializer
+
+
+class ChannelsView(APIView):
+    '''获取二级和三级分类信息'''
+    def get(self, request, pk):
+        sub_cats = GoodsCategory.objects.filter(parent_id=pk)
+        ser = GoodsCategorySerializer(sub_cats, many=True)
+        return Response({'subs': ser.data})
 
 
 class GoodSpecsView(ModelViewSet):
