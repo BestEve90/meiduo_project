@@ -21,12 +21,13 @@ urlpatterns = [
     url(r'^statistical/goods_day_views/$', statistics_view.DailyCategoryVisitView.as_view()),
     url(r'^users/$', users_view.UsersView.as_view()),
     url(r'^skus/categories/$', goods_view.SKUCategoryView.as_view()),
-    url(r'^goods/simple/$', goods_view.SPUNameView.as_view()),
+    url(r'^goods/simple/$', goods_view.SPUSimpleView.as_view()),
     url(r'^goods/(?P<pk>\d+)/specs/$', goods_view.SPUSpecsView.as_view()),
     url(r'^goods/brands/simple/$', goods_view.BrandView.as_view()),
     url(r'^goods/channel/categories/$', goods_view.ChannelView.as_view()),
     url(r'^goods/channel/categories/(?P<pk>\d+)/$', goods_view.ChannelsView.as_view()),
     url(r'^goods/specs/simple/$', goods_view.SpecsSimpleView.as_view()),
+    url(r'^skus/simple/$', goods_view.SKUSimpleView.as_view()),
     url(r'^', include(router.urls)),
 
 ]

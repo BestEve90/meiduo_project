@@ -24,6 +24,14 @@ class SKUSerializer(serializers.ModelSerializer):
         exclude = ['comments', 'default_image']
 
 
+class SKUSimpleSerializer(serializers.ModelSerializer):
+    '''SKU名称序列化器'''
+
+    class Meta:
+        model = SKU
+        fields = ['id', 'name']
+
+
 class GoodsCategorySerializer(serializers.ModelSerializer):
     '''商品类别序列化器'''
 
