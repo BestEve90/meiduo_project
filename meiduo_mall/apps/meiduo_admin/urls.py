@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^goods/simple/$', goods_view.SPUSimpleView.as_view()),
     url(r'^goods/(?P<pk>\d+)/specs/$', goods_view.SPUSpecsView.as_view()),
     url(r'^goods/brands/simple/$', goods_view.BrandView.as_view()),
+    url(r'^goods/images/$', goods_view.DetailImageView.as_view()),
     url(r'^goods/channel/categories/$', goods_view.ChannelView.as_view()),
     url(r'^goods/channel/categories/(?P<pk>\d+)/$', goods_view.ChannelsView.as_view()),
     url(r'^goods/specs/simple/$', goods_view.SpecsSimpleView.as_view()),

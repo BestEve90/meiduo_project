@@ -1,3 +1,4 @@
+from django.conf import settings
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
@@ -111,7 +112,7 @@ class SKUImagesView(ModelViewSet):
         if res['Status'] != 'Upload successed.':
             return Response(status=403)
         image_url = res['Remote file_id']
-        sku_id = request.data.get('sku')[0]
+        sku_id = request.data.get('sku')
         img = SKUImage.objects.create(sku_id=sku_id, image=image_url)
         return Response({
             'id': img.id,
@@ -127,9 +128,10 @@ class SKUImagesView(ModelViewSet):
         if res['Status'] != 'Upload successed.':
             return Response(status=403)
         image_url = res['Remote file_id']
-        sku_id = request.data.get('sku')[0]
+        sku_id = request.data.get('sku')
         img = SKUImage.objects.get(id=kwargs['pk'])
         img.image = image_url
+        img.sku_id = sku_id
         img.save()
         return Response({
             'id': img.id,
@@ -143,3 +145,17 @@ class SKUSimpleView(ListAPIView):
     '''获取SKU名称'''
     queryset = SKU.objects.all()
     serializer_class = SKUSimpleSerializer
+
+
+class DetailImageView(APIView):
+    def post(self, request):
+        image = request.FILES.get('image')
+        client = Fdfs_client('/home/python/Desktop/meiduo_mall/meiduo_mall/utils/fastdfs/client.conf')
+        res = client.upload_by_buffer(image.read())
+        if res['Status'] != 'Upload successed.':
+            return Response({'error': '上传失败'}, status=501)
+        return Response(
+            {
+                'img_url': settings.FDFS_URL + res['Remote file_id']
+            },
+            status=201)
