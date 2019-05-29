@@ -7,6 +7,7 @@ from meiduo_admin.serializers.goods_serializers import SKUSerializer, GoodsCateg
 from meiduo_admin.utils.page_num import PageNum
 from goods.models import SKU, GoodsCategory, SPU, SPUSpecification, Brand, SpecificationOption, SKUImage
 from rest_framework.response import Response
+from fdfs_client.client import Fdfs_client
 
 
 class SKUView(ModelViewSet):
@@ -102,6 +103,22 @@ class SKUImagesView(ModelViewSet):
     queryset = SKUImage.objects.all()
     serializer_class = SKUImageSerializer
     pagination_class = PageNum
+
+    def create(self, request, *args, **kwargs):
+        client = Fdfs_client('/home/python/Desktop/meiduo_mall/meiduo_mall/utils/fastdfs/client.conf')
+        data = request.FILES.get('image')
+        res = client.upload_by_buffer(data.read())
+        if res['Status'] != 'Upload successed.':
+            return Response(status=403)
+        image_url = res['Remote file_id']
+        sku_id = request.data.get('sku')[0]
+        img = SKUImage.objects.create(sku_id=sku_id, image=image_url)
+        return Response({
+            'id': img.id,
+            'sku': sku_id,
+            'image': img.image.url
+        },
+            status=201)
 
 
 class SKUSimpleView(ListAPIView):
