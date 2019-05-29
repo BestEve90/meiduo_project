@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.db import transaction
 from fdfs_client.client import Fdfs_client
 from rest_framework import serializers
 from rest_framework.response import Response
@@ -18,7 +19,7 @@ class SKUSpecSerializer(serializers.ModelSerializer):
 
 class SKUSerializer(serializers.ModelSerializer):
     '''SKU序列化器'''
-    specs = SKUSpecSerializer(many=True, read_only=True)  # 必须read_only? 写入数据库时不需要该数据,不read_only数据库报错,不支持nested fields可写
+    specs = SKUSpecSerializer(many=True)  # 必须read_only? 写入数据库时不需要该数据,不read_only数据库报错,不支持nested fields可写
     spu = serializers.StringRelatedField(read_only=True)  # 必须read_only? 写入数据库时不需要该数据, 但不read_only也没出错
     spu_id = serializers.IntegerField()  # 必须单拎出来? 不然不存在? 对  无法进行序列化 写入数据库时没有该值,数据库报错
     category = serializers.StringRelatedField(read_only=True)  # 必须read_only? 写入数据库时不需要该数据, 但不read_only也没出错
@@ -27,6 +28,41 @@ class SKUSerializer(serializers.ModelSerializer):
     class Meta:
         model = SKU
         exclude = ['comments', 'default_image']
+
+    def create(self, validated_data):
+        specs = self.context.get('request').data.get('specs')
+        del validated_data['specs']
+        with transaction.atomic():
+            spt = transaction.savepoint()
+            try:
+                sku = SKU.objects.create(**validated_data)
+                for spec in specs:
+                    SKUSpecification.objects.create(sku_id=sku.id, spec_id=spec['spec_id'], option_id=spec['option_id'])
+            except:
+                transaction.savepoint_rollback(spt)
+                raise serializers.ValidationError({'error': '商品保存失败'})
+            else:
+                transaction.savepoint_commit(spt)
+                generate_static_detail_html.delay(sku.id)
+                return sku
+
+    def update(self, instance, validated_data):
+        specs = self.context.get('request').data.get('specs')
+        del validated_data['specs']
+        with transaction.atomic():
+            spt = transaction.savepoint()
+            try:
+                SKU.objects.filter(id=instance.id).update(**validated_data)
+                SKUSpecification.objects.filter(sku=instance).delete()
+                for spec in specs:
+                    SKUSpecification.objects.create(sku=instance, spec_id=spec['spec_id'], option_id=spec['option_id'])
+            except:
+                transaction.savepoint_rollback(spt)
+                raise serializers.ValidationError({'error': '商品修改失败'})
+            else:
+                transaction.savepoint_commit(spt)
+                generate_static_detail_html.delay(instance.id)
+                return instance
 
 
 class SKUSimpleSerializer(serializers.ModelSerializer):
@@ -121,7 +157,7 @@ class SKUImageSerializer(serializers.ModelSerializer):
         image_data = self.context.get('request').FILES.get('image')
         res = client.upload_by_buffer(image_data.read())
         if res['Status'] != 'Upload successed.':
-            return Response(status=403)
+            raise serializers.ValidationError({'error': '图片上传失败'})
         img = SKUImage.objects.create(sku=validated_data['sku'], image=res['Remote file_id'])
         generate_static_detail_html.delay(img.sku_id)
         return img
