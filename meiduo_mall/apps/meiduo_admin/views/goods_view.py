@@ -105,41 +105,6 @@ class SKUImagesView(ModelViewSet):
     serializer_class = SKUImageSerializer
     pagination_class = PageNum
 
-    def create(self, request, *args, **kwargs):
-        client = Fdfs_client('/home/python/Desktop/meiduo_mall/meiduo_mall/utils/fastdfs/client.conf')
-        data = request.FILES.get('image')
-        res = client.upload_by_buffer(data.read())
-        if res['Status'] != 'Upload successed.':
-            return Response(status=403)
-        image_url = res['Remote file_id']
-        sku_id = request.data.get('sku')
-        img = SKUImage.objects.create(sku_id=sku_id, image=image_url)
-        return Response({
-            'id': img.id,
-            'sku': sku_id,
-            'image': img.image.url
-        },
-            status=201)
-
-    def update(self, request, *args, **kwargs):
-        client = Fdfs_client('/home/python/Desktop/meiduo_mall/meiduo_mall/utils/fastdfs/client.conf')
-        data = request.FILES.get('image')
-        res = client.upload_by_buffer(data.read())
-        if res['Status'] != 'Upload successed.':
-            return Response(status=403)
-        image_url = res['Remote file_id']
-        sku_id = request.data.get('sku')
-        img = SKUImage.objects.get(id=kwargs['pk'])
-        img.image = image_url
-        img.sku_id = sku_id
-        img.save()
-        return Response({
-            'id': img.id,
-            'sku': sku_id,
-            'image': img.image.url
-        },
-            status=201)
-
 
 class SKUSimpleView(ListAPIView):
     '''获取SKU名称'''

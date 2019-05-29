@@ -253,6 +253,7 @@ EMAIL_ACTIVE_URL = 'http://www.meiduo.site:8000/emails/verification/'
 
 # fastdfs图片链接前缀
 FDFS_URL = 'http://image.meiduo.site:8888/'
+FDFS_PATH = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
 DEFAULT_FILE_STORAGE = 'meiduo_mall.utils.storage.FdfsStorage'
 # Haystack
 HAYSTACK_CONNECTIONS = {

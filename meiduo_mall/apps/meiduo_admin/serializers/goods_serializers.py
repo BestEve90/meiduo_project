@@ -1,4 +1,9 @@
+from django.conf import settings
+from fdfs_client.client import Fdfs_client
 from rest_framework import serializers
+from rest_framework.response import Response
+from celery_tasks.detail.tasks import generate_static_detail_html
+
 from goods.models import SKU, SKUSpecification, GoodsCategory, SPU, SpecificationOption, SPUSpecification, Brand, \
     SKUImage
 
@@ -106,8 +111,29 @@ class BrandSerializer(serializers.ModelSerializer):
 
 class SKUImageSerializer(serializers.ModelSerializer):
     '''SKU图片序列化器'''
-    sku = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = SKUImage
         fields = ['id', 'sku', 'image']
+
+    def create(self, validated_data):
+        client = Fdfs_client(settings.FDFS_PATH)
+        image_data = self.context.get('request').FILES.get('image')
+        res = client.upload_by_buffer(image_data.read())
+        if res['Status'] != 'Upload successed.':
+            return Response(status=403)
+        img = SKUImage.objects.create(sku=validated_data['sku'], image=res['Remote file_id'])
+        generate_static_detail_html.delay(img.sku_id)
+        return img
+
+    def update(self, instance, validated_data):
+        client = Fdfs_client(settings.FDFS_PATH)
+        image_data = self.context.get('request').FILES.get('image')
+        res = client.upload_by_buffer(image_data.read())
+        if res['Status'] != 'Upload successed.':
+            return Response(status=403)
+        instance.sku = validated_data['sku']
+        instance.image = res['Remote file_id']
+        instance.save()
+        generate_static_detail_html.delay(instance.sku_id)
+        return instance
