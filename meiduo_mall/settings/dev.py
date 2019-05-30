@@ -179,7 +179,7 @@ CACHES = {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
-    "carts": {  # 浏览记录
+    "carts": {  # 购物车
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/4",
         "OPTIONS": {
@@ -284,6 +284,7 @@ CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
 # CORS
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8080',
+    'http://127.0.0.1:8000',
     'http://localhost:8080',
     'http://www.meiduo.site:8080',
     'http://api.meiduo.site:8000',

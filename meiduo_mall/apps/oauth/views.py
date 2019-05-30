@@ -68,7 +68,7 @@ class OauthCallBackView(View):
         if msg_code_cli != msg_code_server.decode():
             return render(request, 'oauth_callback.html', {'errmsg': '短信验证码填写错误'})
 
-        open_id = check_access_token(token, constants.OPENID_EXPIRES)
+        open_id = check_access_token(token, constants.OPENID_EXPIRES).get('openid')
         if not open_id:
             logger.info(token)
             return render(request, 'oauth_callback.html', {'errmsg': 'openid已过期'})

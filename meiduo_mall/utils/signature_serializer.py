@@ -15,10 +15,10 @@ def check_access_token(token,expire):
     # 验证失败，会抛出itsdangerous.BadData异常
     serializer = Serializer(SECRET_KEY, expire)
     try:
-        data = serializer.loads(token)
+        data_dict = serializer.loads(token)
     except:
         return None
-    return data
+    return data_dict
 
 
 if __name__ == '__main__':
