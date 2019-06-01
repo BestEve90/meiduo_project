@@ -11,6 +11,7 @@ router.register('goods', goods_view.SPUView, base_name='spu')
 router.register('specs/options', goods_view.OptionsView, base_name='options')
 router.register('orders', orders_view.OrderView, base_name='order')
 router.register('permission/perms', manager_views.PermisssionViews, base_name='permission')
+router.register('permission/groups', manager_views.UserGroupViews, base_name='group')
 print(router.urls)
 
 urlpatterns = [
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^goods/specs/simple/$', goods_view.SpecsSimpleView.as_view()),
     url(r'^skus/simple/$', goods_view.SKUSimpleView.as_view()),
     url(r'^permission/content_types/$', manager_views.PermisssionViews.as_view({'get': 'content_types'})),
+    url(r'^permission/simple/$', manager_views.UserGroupViews.as_view({'get': 'permission_simple'})),
     url(r'^', include(router.urls)),
 
 ]
