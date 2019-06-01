@@ -5,6 +5,9 @@ from orders.models import OrderInfo
 
 class AlipayTradeNumber(BaseModel):
     order = models.ForeignKey(OrderInfo, related_name='alipays')
-    trade_no=models.CharField(max_length=100)
+    trade_no = models.CharField(max_length=100)
+
     class Meta:
-        db_table='tb_alipay'
+        db_table = 'tb_alipay'
+        verbose_name = '支付宝流水号'
+        verbose_name_plural = verbose_name

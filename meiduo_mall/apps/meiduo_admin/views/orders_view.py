@@ -23,7 +23,7 @@ class OrderView(ModelViewSet):
         # orderinfo = self.get_object()
         # serializer = self.get_serializer(orderinfo, data_dict)
         # if not serializer.is_valid():
-        #     return Response('error':serializer.errors)   #  前端传的参数不全
+        #     return Response('error':serializer.errors)   #  这种方法需要传的参数特别全
         # serializer.save()
         # return Response(serializer.data)
         try:

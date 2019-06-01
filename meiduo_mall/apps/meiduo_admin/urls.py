@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework_jwt.views import obtain_jwt_token
-from .views import statistics_view, users_view, goods_view,orders_view
+from .views import statistics_view, users_view, goods_view, orders_view, manager_views
 from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
@@ -10,6 +10,7 @@ router.register('skus', goods_view.SKUView, base_name='sku')
 router.register('goods', goods_view.SPUView, base_name='spu')
 router.register('specs/options', goods_view.OptionsView, base_name='options')
 router.register('orders', orders_view.OrderView, base_name='order')
+router.register('permission/perms', manager_views.PermisssionViews, base_name='permission')
 print(router.urls)
 
 urlpatterns = [
@@ -30,6 +31,7 @@ urlpatterns = [
     url(r'^goods/channel/categories/(?P<pk>\d+)/$', goods_view.ChannelsView.as_view()),
     url(r'^goods/specs/simple/$', goods_view.SpecsSimpleView.as_view()),
     url(r'^skus/simple/$', goods_view.SKUSimpleView.as_view()),
+    url(r'^permission/content_types/$', manager_views.PermisssionViews.as_view({'get': 'content_types'})),
     url(r'^', include(router.urls)),
 
 ]
