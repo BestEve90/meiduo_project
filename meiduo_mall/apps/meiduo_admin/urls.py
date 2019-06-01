@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework_jwt.views import obtain_jwt_token
-from .views import statistics_view, users_view, goods_view
+from .views import statistics_view, users_view, goods_view,orders_view
 from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
@@ -9,6 +9,7 @@ router.register('goods/specs', goods_view.GoodSpecsView, base_name='specs')
 router.register('skus', goods_view.SKUView, base_name='sku')
 router.register('goods', goods_view.SPUView, base_name='spu')
 router.register('specs/options', goods_view.OptionsView, base_name='options')
+router.register('orders', orders_view.OrderView, base_name='order')
 print(router.urls)
 
 urlpatterns = [
