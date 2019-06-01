@@ -19,7 +19,7 @@ class SKUSpecSerializer(serializers.ModelSerializer):
 
 class SKUSerializer(serializers.ModelSerializer):
     '''SKU序列化器'''
-    specs = SKUSpecSerializer(many=True)  # 必须read_only? 写入数据库时不需要该数据,不read_only数据库报错,不支持nested fields可写
+    specs = SKUSpecSerializer(many=True, read_only=True)  # 必须read_only? 写入数据库时不需要该数据,不read_only数据库报错,不支持nested fields可写
     spu = serializers.StringRelatedField(read_only=True)  # 必须read_only? 写入数据库时不需要该数据, 但不read_only也没出错
     spu_id = serializers.IntegerField()  # 必须单拎出来? 不然不存在? 对  无法进行序列化 写入数据库时没有该值,数据库报错
     category = serializers.StringRelatedField(read_only=True)  # 必须read_only? 写入数据库时不需要该数据, 但不read_only也没出错
@@ -31,7 +31,6 @@ class SKUSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         specs = self.context.get('request').data.get('specs')
-        del validated_data['specs']
         with transaction.atomic():
             spt = transaction.savepoint()
             try:
@@ -48,14 +47,12 @@ class SKUSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         specs = self.context.get('request').data.get('specs')
-        del validated_data['specs']
         with transaction.atomic():
             spt = transaction.savepoint()
             try:
                 SKU.objects.filter(id=instance.id).update(**validated_data)
-                SKUSpecification.objects.filter(sku=instance).delete()
                 for spec in specs:
-                    SKUSpecification.objects.create(sku=instance, spec_id=spec['spec_id'], option_id=spec['option_id'])
+                    SKUSpecification.objects.filter(sku=instance, spec_id=spec['spec_id']).update(option_id=spec['option_id'])
             except:
                 transaction.savepoint_rollback(spt)
                 raise serializers.ValidationError({'error': '商品修改失败'})
