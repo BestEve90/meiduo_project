@@ -108,7 +108,7 @@ class OrderCommitView(LoginRequiredMixin, View):
                     if count > sku.stock:
                         transaction.savepoint_rollback(sid)
                         return http.JsonResponse({'code': RETCODE.STOCKERR, 'errmsg': '库存不足'})
-                    time.sleep(5)
+                    # time.sleep(5)
                     # 修改库存和销量
                     old_stock = sku.stock
                     new_stock = sku.stock - count
